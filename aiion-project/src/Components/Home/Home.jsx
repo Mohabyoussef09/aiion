@@ -1,8 +1,24 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import img from "../../assets/images/data.webp";
 
+
 function Home() {
+
+
+    let [fileContent, setFileContent] = useState('');
+  
+    useEffect(() => {
+      fetch('./file.txt')
+        .then((response) => response.text())
+        .then((text) => {
+          setFileContent(text);
+        })
+        .catch((error) => {
+          console.error('Error fetching the text file:', error);
+        });
+    }, []);
+
   return (
     <>
       <div className="container">
@@ -18,16 +34,15 @@ function Home() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
               aliquam fugiat minima voluptatibus, cumque sint.
             </p>
-            
+
             <a href="#link" className="btn btn-success w-20">
-              <i className="fas fa-arrow-right me-2" />Click here
+              <i className="fas fa-arrow-right me-2"/>
+              Click here
             </a>
-            
           </div>
 
-
           <div className="col-md-6 d-flex justify-content-center align-items-center circle-image-wrapper">
-              <img src={img} className="circle-image" />
+            <img src={img} className="circle-image" />
           </div>
         </div>
       </div>
@@ -36,7 +51,7 @@ function Home() {
         <div className="container">
           <div className="row">
             <div className="col-md-6 py-5 text-center">
-              <i className="fa-solid fa-globe mx-auto"></i>
+              <i className="fa-solid fa-globe mx-auto ic"></i>
               <h2>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
                 magnam?
@@ -54,10 +69,14 @@ function Home() {
                 accusamus, natus tenetur neque non libero eaque atque nemo
                 nostrum! Omnis!
               </p>
-              <a href="">Learn More</a>
+              <a href="#link" className="btn btn-success">
+                <i className="fas fa-arrow-right me-2" />
+                Click here
+              </a>
+
             </div>
             <div className="col-md-6 py-5 text-center">
-              <i className="fa-solid fa-bullseye mx-auto"></i>
+              <i className="fa-solid fa-bullseye mx-auto ic"></i>
               <h2>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
                 magnam?
@@ -75,16 +94,16 @@ function Home() {
                 accusamus, natus tenetur neque non libero eaque atque nemo
                 nostrum! Omnis!
               </p>
-              <a href="">Learn More</a>
+              <a href="#link" className="btn btn-success">
+                <i className="fas fa-arrow-right me-2" />
+                Click here
+              </a>
             </div>
           </div>
         </div>
       </div>
 
-
-
-
-{/* <div classname="info bg-body-tertiary">
+      {/* <div classname="info bg-body-tertiary">
   <div classname="container">
     <div classname="row">
       <div classname="col-md-6 py-5 text-center">
@@ -127,7 +146,7 @@ function Home() {
           accusamus, natus tenetur neque non libero eaque atque nemo nostrum!
           Omnis!
         </p>
-        <a href className="btn btn-success btn-icon">
+        <a className="btn btn-success btn-icon">
           <i className="fa-solid fa-arrow-right" /> Learn More
         </a>
       </div>
@@ -135,32 +154,11 @@ function Home() {
   </div>
 </div> */}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <div className="counter text-center py-5">
         <div className="container py-5">
           <div className="col-md-12">
             <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
-            <span className="fa-3x">100,000,000</span>
+            <span className="fa-3x">{fileContent}</span>
             <p className="fs-5">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
               fugit?

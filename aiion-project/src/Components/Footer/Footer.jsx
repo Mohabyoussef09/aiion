@@ -6,45 +6,6 @@ import footerImg from '../../assets/images/logo.jpg'
 function Footer() {
     return (
         <>
-        {/* <div className='footer bg-dark py-5 text-white'>
-            <div className="container py-5">
-                <div className="row">
-                    <div className="col-md-5 text-center mb-3">
-                        <img src={footerImg} alt="" />
-                    </div>
-                    <div className="col-md-3 d-flex flex-column justify-content-center align-items-center py-3">
-                        <a href="">Resources</a>
-                        <a href="">Governing Board</a>
-                        <a href="">Status Page</a>
-                        <a href="">Email Us</a>
-                    </div>
-
-                    <div className="col-md-4 d-flex flex-column justify-content-center align-items-center">
-                        <a href="">The Doi Handbook</a>
-                        <a href="">Iso 26324</a>
-                        <a href="">Privacy Policy</a>
-                        <a href="">Trademarks (PDF)</a>
-                    </div>
-                </div>
-
-                <div className="row mt-5">
-                    <div className="col-md-10 d-flex flex-column align-items-center">
-                        <p>Copyright © 2022 DOI Foundation.  The content of this site is licensed under a Creative Commons Attribution 4.0 International License.</p>
-                        <p>DOI®, DOI.ORG®, and shortDOI® are trademarks of the DOI Foundation.</p>
-                    </div>
-                    <div className="col-md-2 d-flex justify-content-evenly fs-3">
-                            <i className="fa-brands fa-twitter"></i>
-                            <i className="fa-brands fa-linkedin"></i>
-                            <i className="fa-solid fa-envelope"></i>
-                    </div>
-                </div>
-            </div>
-        </div> */}
-
-
-
-
-
   <footer className="text-center text-lg-start text-white" style={{backgroundColor: 'black'}}>
     <div className="container p-4 pb-0">
       <section className>
