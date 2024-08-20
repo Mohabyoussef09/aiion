@@ -21,8 +21,8 @@ function Home() {
 
   return (
     <>
-      <div className="container">
-        <div className="row">
+      <div className="container py-5">
+        <div className="row py-5">
           <div className="col-md-6 d-flex flex-column justify-content-center">
             <p className="fs-4 fw-bold">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ad
@@ -47,9 +47,9 @@ function Home() {
         </div>
       </div>
 
-      <div className="info bg-body-tertiary">
+      <div className="info bg-body-tertiary p-5">
         <div className="container">
-          <div className="row">
+          <div className="row g-5">
             <div className="col-md-6 py-5 text-center">
               <i className="fa-solid fa-globe mx-auto ic"></i>
               <h2>
@@ -156,7 +156,7 @@ function Home() {
 
       <div className="counter text-center py-5">
         <div className="container py-5">
-          <div className="col-md-12">
+          <div className="col-md-12 py-5">
             <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
             <span className="fa-3x">{fileContent}</span>
             <p className="fs-5">
