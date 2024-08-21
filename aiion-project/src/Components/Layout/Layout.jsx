@@ -5,6 +5,7 @@ import Footer from './../Footer/Footer';
 import { Outlet } from 'react-router-dom';
 
 import SideBar from './../SideBar/SideBar';
+import Button from '../Button/Button';
 
 
 
@@ -17,7 +18,10 @@ function Layout() {
         
         <Outlet/>
 
-        <Footer/>
+
+        {/* <Button/> */}
+
+        {/* <Footer/> */}
         </>
     );
 }

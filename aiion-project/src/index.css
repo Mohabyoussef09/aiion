@@ -144,6 +144,63 @@
 }
 
 
+/* GradientButton.css */
+.btn-gradient {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #1f698b 0%, #237ec0 100%);
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-gradient .button-icon {
+  margin-right: 10px;
+}
+
+.btn-gradient:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-gradient:active {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* ========================================================= */
+
+
+
+/* Background gradient leaning towards light greens */
+.form-container {
+  background: linear-gradient(135deg, #d4edda, #a2ebb3, #7cad40);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form box styling */
+.form-box {
+  background-color: #ffffff;
+  max-width: 900px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Input field styling */
+.form-control {
+  border: 2px solid #ced4da;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
 
 
   

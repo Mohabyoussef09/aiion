@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 import { React } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/logo.jpg";
 
@@ -36,14 +36,14 @@ function Navbar() {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <NavLink to={"/about"} className="dropdown-item">
+                    <Link to={"/about"} className="dropdown-item">
                       About
-                    </NavLink>
+                    </Link>
                   </li>
                   <li>
-                    <NavLink to={"/history"} className="dropdown-item">
+                    <Link to={"/history"} className="dropdown-item">
                       History
-                    </NavLink>
+                    </Link>
                   </li>
                 </ul>
               </li>
@@ -58,14 +58,14 @@ function Navbar() {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <NavLink to={"/about"} className="dropdown-item">
+                    <Link to={"/single"} className="dropdown-item">
                       Single Input
-                    </NavLink>
+                    </Link>
                   </li>
                   <li>
-                    <NavLink to={"/hisotry"} className="dropdown-item">
+                    <Link to={"/hisotry"} className="dropdown-item">
                       Multi Inputs
-                    </NavLink>
+                    </Link>
                   </li>
                 </ul>
               </li>
@@ -80,9 +80,9 @@ function Navbar() {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <NavLink to={"/about"} className="dropdown-item">
+                    <Link to={"/about"} className="dropdown-item">
                       FAQs
-                    </NavLink>
+                    </Link>
                   </li>
                 </ul>
               </li>
