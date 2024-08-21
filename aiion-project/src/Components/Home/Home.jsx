@@ -3,18 +3,31 @@ import React, { useEffect, useState } from "react";
 import img from "../../assets/images/data.webp";
 
 function Home() {
-  let [fileContent, setFileContent] = useState("");
+  const [fileContent, setFileContent] = useState('');
 
   useEffect(() => {
-    fetch("./file.txt")
-      .then((response) => response.text())
-      .then((text) => {
-        setFileContent(text);
-      })
-      .catch((error) => {
-        console.error("Error fetching the text file:", error);
-      });
+    // Define a function to fetch the file data
+    const fetchFileData = () => {
+      fetch("./file.txt")
+        .then((response) => response.text())
+        .then((text) => {
+          setFileContent(text);
+        })
+        .catch((error) => {
+          console.error("Error fetching the text file:", error);
+        });
+    };
+
+    // Fetch the data initially
+    fetchFileData();
+
+    // Set up the interval to fetch the data every 5 seconds (or any interval you choose)
+    const intervalId = setInterval(fetchFileData, 5000);
+
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(intervalId);
   }, []);
+
 
   return (
     <>
@@ -31,11 +44,6 @@ function Home() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
               aliquam fugiat minima voluptatibus, cumque sint.
             </p>
-
-            <a href="#link" className="btn btn-success w-20">
-              <i className="fas fa-arrow-right me-2" />
-              Click here
-            </a>
           </div>
 
           <div className="col-md-6 d-flex justify-content-center align-items-center circle-image-wrapper">

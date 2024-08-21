@@ -21,7 +21,7 @@ function Layout() {
 
         {/* <Button/> */}
 
-        {/* <Footer/> */}
+        <Footer/>
         </>
     );
 }
