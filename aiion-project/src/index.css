@@ -48,8 +48,6 @@
 .circle-image{
     width: 100%;
     border-radius: 50%;
-    border: 10px solid #27ae60;
-
     animation: spin 150s linear infinite;
 }
   
@@ -64,21 +62,15 @@
 
 
 .header {
-  background: linear-gradient(135deg, #e9f9e1, #499647);
+  background-color: #e6f7e6; 
   padding: 50px 0;
   overflow: hidden;
 }
-
-.text-section p {
-  color: #2c3e50;
-}
-
 
   /* ================================================================= */
 
 .info {
   background-color: #e6f7e6; 
-  color: #2f4f2f; 
 }
 
 .ic {
@@ -129,7 +121,7 @@
   overflow: hidden;
 }
 
-.counter-section::before {
+ .counter-section::before {
   content: '';
   position: absolute;
   top: -50%;
@@ -138,14 +130,13 @@
   height: 200%;
   background: rgba(255, 255, 255, 0.1);
   transform: rotate(45deg);
-  pointer-events: none;
 }
 
 .counter-section .counter {
   font-weight: bold;
   font-size: 3rem;
   display: inline-block;
-  animation: counterAnimation 2s ease-in-out;
+  animation: counterAnimation 1s ease-in-out;
 }
 
 @keyframes counterAnimation {
@@ -162,7 +153,7 @@
 .counter-section h2,
 .counter-section p,
 .counter-section span {
-  animation-duration: 1s;
+  animation-duration: 0.5s;
 }
 
 .counter-section h2,
@@ -177,7 +168,7 @@
 
 .footer-container {
   background-color: #ffffff;
-  color: #2b593e; 
+  color: rgb(3, 177, 3); 
 }
 
 .footer-content {
@@ -186,7 +177,7 @@
 }
 
 .footer-logo .logo {
-  max-width: 150px;
+  max-width: 100px;
 }
 
 .footer-text p {
@@ -194,34 +185,37 @@
 }
 
 .footer-text a {
-  color: #144705;
+  color: rgb(3, 177, 3); 
 }
 
 .footer-text a:hover {
-  color: #21a021;
+  color: #151f15;
 }
 
 
 /* ======================================================== */
 
 
-body {
-  background-color: #f5f5f5;
-  font-family: 'Arial', sans-serif;
-}
-
 .form .container {
   max-width: 600px;
   
 }
 
-.card {
-  border: none;
-  background-color: #ffffff;
+.form {
+  background: linear-gradient(120deg, #d4fc79, #96e6a1);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
-.card-body {
-  padding: 30px;
+
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .form-label {
@@ -244,9 +238,25 @@ body {
   background-color: #28a745;
   border-color: #28a745;
   border-radius: 5px;
+  transition: transform 0.3s ease;
+
 }
 
 .btn-success:hover {
   background-color: #218838;
   border-color: #1e7e34;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

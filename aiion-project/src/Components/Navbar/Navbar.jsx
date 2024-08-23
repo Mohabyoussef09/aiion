@@ -63,7 +63,7 @@ function Navbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link to={"/hisotry"} className="dropdown-item">
+                    <Link to={"/multi"} className="dropdown-item">
                       Multi Inputs
                     </Link>
                   </li>

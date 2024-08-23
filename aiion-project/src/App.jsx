@@ -6,6 +6,7 @@ import About from './Components/About/About';
 import History from './Components/History/History';
 import NotFound from './Components/NotFound/NotFound';
 import SingleInput from './Components/SingleInput/SingleInput';
+import MultiInputs from './Components/MultiInputs/MultiInputs';
 
 
 let x = createBrowserRouter([
@@ -14,6 +15,7 @@ let x = createBrowserRouter([
     {path: 'about' , element: <About/>},
     {path: 'history' , element: <History/>},
     {path: 'single' , element: <SingleInput/>},
+    {path: 'multi' , element: <MultiInputs/>},
     {path: '*' , element: <NotFound />}
   ]}
 ])
