@@ -64,7 +64,7 @@
 
 
 .header {
-  background: linear-gradient(135deg, #e9f9e1, #c2f2c1);
+  background: linear-gradient(135deg, #e9f9e1, #499647);
   padding: 50px 0;
   overflow: hidden;
 }
@@ -176,7 +176,7 @@
 
 
 .footer-container {
-  background-color: #eaf4ea;
+  background-color: #ffffff;
   color: #2b593e; 
 }
 
@@ -199,4 +199,54 @@
 
 .footer-text a:hover {
   color: #21a021;
+}
+
+
+/* ======================================================== */
+
+
+body {
+  background-color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+}
+
+.form .container {
+  max-width: 600px;
+  
+}
+
+.card {
+  border: none;
+  background-color: #ffffff;
+}
+
+.card-body {
+  padding: 30px;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.form-control {
+  border: 2px solid #28a745;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #0e9b2f;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  border-radius: 5px;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
 }
