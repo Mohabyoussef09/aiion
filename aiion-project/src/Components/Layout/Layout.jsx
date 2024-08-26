@@ -18,10 +18,7 @@ function Layout() {
         
         <Outlet/>
 
-
-        {/* <Button/> */}
-
-        <Footer/>
+        {/* <Footer/> */}
         </>
     );
 }

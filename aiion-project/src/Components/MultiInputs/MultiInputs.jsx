@@ -1,82 +1,71 @@
 import React, { useState } from "react";
-import axios from "axios";
 
 function MultiInputs() {
   const [file, setFile] = useState(null);
-  const [uploadStatus, setUploadStatus] = useState(""); 
+  const [uploadStatus, setUploadStatus] = useState("");
 
   const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-    setUploadStatus(""); 
+    const selectedFile = e.target.files[0];
+    setFile(selectedFile);
+    setUploadStatus("");
   };
 
-  const handleUpload = async () => {
+  const handleUpload = () => {
     if (!file) {
       alert("Please select a file first.");
       return;
     }
 
-    const formData = new FormData();
-    formData.append("file", file);
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const myData = reader.result.split(",")[1];
+      console.log(myData);
 
-    try {
-      setUploadStatus("Uploading...");
-
-      const response = await axios.post(
-        "http://httpbin.org/post",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
+      localStorage.setItem(
+        "uploadedFile",
+        JSON.stringify({
+          fileName: file.name,
+          fileType: file.type,
+          fileData: myData,
+        })
       );
 
-      if (response.status === 200) {
-        setUploadStatus("File uploaded successfully!");
-        setFile(null); 
-      } else {
-        setUploadStatus("File upload failed.");
-      }
-    } catch (error) {
-      console.error("Error uploading file:", error);
-      setUploadStatus("Error uploading file.");
-    }
+      setUploadStatus("File uploaded to local storage successfully!");
+      setFile(null);
+    };
+
+    reader.readAsDataURL(file);
   };
 
   return (
-    <>
-      <div className="file-uploader-container">
-        <div className="file-uploader">
-          <div className="upload-icon">
-            <i className="fas fa-cloud-upload-alt fa-3x"></i>
-          </div>
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-md-10 d-flex flex-column align-items-center justify-content-center upload-box p-5">
+          <i className="fas fa-file-upload fa-5x mb-3 upload-icon"></i>
+          <p className="text-center upload-text">Drag and drop a file to upload</p>
+
           <input
             type="file"
+            id="fileInput"
             onChange={handleFileChange}
-            className="form-control"
+            style={{ display: "none" }}
           />
-          <button
-            onClick={handleUpload}
-            className="btn btn-success mt-3"
-            // disabled={!file}
-          >
-            Upload
+          <label htmlFor="fileInput" className="btn btn-upload">
+            {file ? file.name : "Choose File"}
+          </label>
+          <p className="text-center upload-status mt-4">{uploadStatus}</p>
+
+        </div>
+        <div className="predict-div col-md-2 d-flex justify-content-center align-items-center">
+          <button onClick={handleUpload} className="btn btn-predict" disabled={!file}>
+            Predict
           </button>
-          {file && (
-            <p className="mt-3 text-primary">
-              Selected file: <strong>{file.name}</strong>
-            </p>
-          )}
-          {uploadStatus && (
-            <p className="mt-3 text-success">
-              <strong>{uploadStatus}</strong>
-            </p>
-          )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
 export default MultiInputs;
+
+

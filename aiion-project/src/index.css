@@ -62,16 +62,11 @@
 
 
 .header {
-  background-color: #e6f7e6; 
   padding: 50px 0;
   overflow: hidden;
 }
 
   /* ================================================================= */
-
-.info {
-  background-color: #e6f7e6; 
-}
 
 .ic {
   font-size: 3rem;
@@ -207,7 +202,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeIn 1.5s ease-in-out;
+  /* animation: fadeIn 1.5s ease-in-out; */
 }
 
 
@@ -238,7 +233,7 @@
   background-color: #28a745;
   border-color: #28a745;
   border-radius: 5px;
-  transition: transform 0.3s ease;
+  /* transition: transform 0.3s ease; */
 
 }
 
@@ -250,7 +245,7 @@
 
 }
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -260,49 +255,60 @@
     transform: translateY(0);
   }
 }
-
+ */
 
 
 
 /* =================================================================== */
 
 
-.file-uploader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background:#28a745;
-  background-image: linear-gradient(135deg, #28a745 50%, #1e7e34 100%);
-  position: relative;
-  overflow: hidden;
-
-}
-
-.file-uploader-container::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  width: 200%;
-  height: 200%;
-  background: rgba(255, 255, 255, 0.1);
-  transform: rotate(45deg);
-}
-
-.file-uploader {
-  background-color: whitesmoke;
-  padding: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-
+.upload-box {
+  background-color: #e8f5e9;
+  border: 2px dashed #4caf50;
+  border-radius: 10px;
 }
 
 .upload-icon {
-  color: #56ab2f;
-  margin-bottom: 20px;
+  color: #4caf50;
 }
 
-.btn-success {
-  background-color: #28a745;
-  border-color: #56ab2f;
+.upload-text {
+  color: #388e3c;
+  font-weight: 600;
+}
+
+.btn-upload {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-top: 15px;
+}
+
+.btn-upload:hover {
+  background-color: #388e3c;
+  color: white;
+}
+
+.btn-predict {
+  background-color: #388e3c;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-predict:disabled {
+  background-color: #c8e6c9;
+  cursor: not-allowed;
+}
+
+.btn-predict:hover:not(:disabled) {
+  background-color: #2e7d32;
+}
+
+.upload-status {
+  color: #388e3c;
+  font-weight: bold;
 }
