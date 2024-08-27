@@ -1,3 +1,5 @@
+
+
 import React, { useState } from "react";
 
 function MultiInputs() {
@@ -39,10 +41,12 @@ function MultiInputs() {
 
   return (
     <div className="container mt-5">
-      <div className="row justify-content-center">
-        <div className="col-md-10 d-flex flex-column align-items-center justify-content-center upload-box p-5">
+      <div className="row">
+        <div className="col-md-12 d-flex flex-column align-items-center upload-box p-5">
           <i className="fas fa-file-upload fa-5x mb-3 upload-icon"></i>
-          <p className="text-center upload-text">Drag and drop a file to upload</p>
+          <p className="upload-text ">
+            Drag and drop a file to upload
+          </p>
 
           <input
             type="file"
@@ -50,16 +54,22 @@ function MultiInputs() {
             onChange={handleFileChange}
             style={{ display: "none" }}
           />
-          <label htmlFor="fileInput" className="btn btn-upload">
-            {file ? file.name : "Choose File"}
-          </label>
-          <p className="text-center upload-status mt-4">{uploadStatus}</p>
 
-        </div>
-        <div className="predict-div col-md-2 d-flex justify-content-center align-items-center">
-          <button onClick={handleUpload} className="btn btn-predict" disabled={!file}>
-            Predict
-          </button>
+          <div className="d-flex">
+            <label htmlFor="fileInput" className="btn btn-upload">
+              {file ? file.name : "Choose File"}
+            </label>
+
+            <button
+              onClick={handleUpload}
+              className="btn btn-upload ms-3"
+              disabled={!file}
+            >
+              Predict
+            </button>
+          </div>
+
+          <p className="text-center upload-status mt-4">{uploadStatus}</p>
         </div>
       </div>
     </div>
@@ -67,5 +77,3 @@ function MultiInputs() {
 }
 
 export default MultiInputs;
-
-
