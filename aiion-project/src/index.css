@@ -41,7 +41,7 @@
 
 /* ==================================================== */
 
- .circle-image-wrapper {
+ /* .circle-image-wrapper {
     overflow: hidden;
 }
 
@@ -64,7 +64,45 @@
 .header {
   padding: 50px 0;
   overflow: hidden;
+} */
+
+
+
+.circle-image {
+  width: 500px; /* Initial size */
+  height: 500px; /* Make sure it's a square */
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover; /* Ensures the image covers the entire area */
 }
+
+.animated-image {
+  animation: spin 50s linear infinite; /* Apply the spinning animation */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); /* Start position */
+  }
+  to {
+    transform: rotate(360deg); /* End position */
+  }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .circle-image {
+    width: 300px; /* Smaller size for medium screens */
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .circle-image {
+    width: 300px; /* Smaller size for small screens */
+    height: 300px;
+  }
+}
+
 
   /* ================================================================= */
 
@@ -202,7 +240,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* animation: fadeIn 1.5s ease-in-out; */
 }
 
 
@@ -245,17 +282,7 @@
 
 }
 
-/* @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
- */
+
 
 
 
