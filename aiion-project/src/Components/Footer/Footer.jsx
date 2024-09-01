@@ -6,7 +6,7 @@ function Footer() {
   return (
     <>
       <footer className="footer-container py-4">
-        <div className="container footer-content d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <div className="footer-content d-flex flex-column flex-md-row justify-content-between align-items-center">
           <div className="footer-logo mb-3 mb-md-0">
             <img
               src={footerImg}

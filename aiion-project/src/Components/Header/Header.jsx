@@ -4,7 +4,7 @@ import img from "../../assets/images/circle-bin.avif";
 function Header() {
   return (
     <>
-      {/* <div className="header">
+      <div className="header">
         <div className="container">
           <div className="row">
             <div className="col-md-6 d-flex flex-column justify-content-center text-section">
@@ -28,10 +28,10 @@ function Header() {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
 
-<div className="header">
+{/* <div className="header">
   <div className="container">
     <div className="row">
       <div className="col-md-7 d-flex flex-column justify-content-center text-section">
@@ -47,15 +47,15 @@ function Header() {
         </p>
       </div>
       <div className="col-md-5 d-flex justify-content-center align-items-center circle-image-wrapper">
-        {/* <img
+        <img
           src={img}
           className="circle-image img-fluid animated-image"
           alt="Animated Image"
-        /> */}
+        />
       </div>
     </div>
   </div>
-</div>
+</div> */}
 
     </>
   );

@@ -339,3 +339,13 @@
   color: #388e3c;
   font-weight: bold;
 }
+
+/* =================================================== */
+
+
+.parent{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

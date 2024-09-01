@@ -1,24 +1,19 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
+
 const app = express();
-const port = 5000;
+const port = 3000;
 
-// Middleware to parse JSON request bodies
-app.use(express.json());
 app.use(cors());
+app.use(bodyParser.json());
 
-// API route to calculate the sum
-app.post('/api/sum', (req, res) => {
-    const { numbers } = req.body;
-
-    if (!Array.isArray(numbers) || numbers.length !== 9) {
-        return res.status(400).json({ error: 'Please provide an array of exactly 9 numbers.' });
-    }
-
-    const sum = numbers.reduce((acc, num) => acc + num, 0);
+app.post('/sum', (req, res) => {
+    const { a, b, c, d, e, f, g, h, i } = req.body;
+    const sum = [a, b, c, d, e, f, g, h, i].reduce((acc, val) => acc + Number(val), 0);
     res.json({ sum });
 });
 
 app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+    console.log(`Server running at http://localhost:${port}`);
 });
