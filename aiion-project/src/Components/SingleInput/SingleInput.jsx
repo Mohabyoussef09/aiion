@@ -34,17 +34,64 @@ function SingleInput() {
     onSubmit: handleSingleInputs,
   });
 
+  function handleClear() {
+    formik.resetForm();
+    setSum(null);
+  }
+
+  const tableStyle = {
+    fontFamily: `'IBM Plex Mono', monospace`,
+  };
+
   return (
     <>
       <div className="container container-form my-5 rounded p-3">
         <div className="row">
           <div className="col-12 col-md-3 p-4 text-center text-md-start welcome-section">
-            <h3 className="mb-3">Welcome</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Laboriosam harum accusantium excepturi ex fugiat tempore!
-            </p>
-            <button className="btn btn-light w-100 mt-3">Login</button>
+            <h3 className="mb-3">Explanation</h3>
+
+            <table className="table table-striped table-bordered table-hover table-sm table-responsive" style={tableStyle}>
+            <thead>
+              <tr>
+                <th>classical geothermometers</th>
+                <th className="align-middle">t(C)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>temp</td>
+                <td>{sum !== null ? <span>{sum}</span> : "N/A"}</td>
+              </tr>
+              <tr>
+                <td>quartz (four&pott82)</td>
+                <td className="align-middle">N/A</td>
+              </tr>
+              <tr>
+                <td>am.silica (four77)</td>
+                <td className="align-middle">N/A</td>
+              </tr>
+              <tr>
+                <td>chalcedony (four77)</td>
+                <td className="align-middle">N/A</td>
+              </tr>
+              <tr>
+                <td>na-k-ca (four&true73)</td>
+                <td className="align-middle">N/A</td>
+              </tr>
+              <tr>
+                <td>na-k (gigg88)</td>
+                <td className="align-middle">N/A</td>
+              </tr>
+              <tr>
+                <td>k-mg (gigg88)</td>
+                <td className="align-middle">N/A</td>
+              </tr>
+              <tr>
+                <td>na-li (foui&mich81)</td>
+                <td className="align-middle">N/A</td>
+              </tr>
+            </tbody>
+          </table>
           </div>
           <div className="col-12 col-md-9 form-section text-dark p-4">
             <h3 className="mb-4">Free Trial</h3>
@@ -136,13 +183,19 @@ function SingleInput() {
                   />
                 </div>
               </div>
-              <button type="submit" className="btn btn-outline-primary w-100">Predict</button>
-            </form>
-            {sum !== null && (
-              <div className="mt-4">
-                <h4 className="text-center">Sum: {sum}</h4>
+              <div className="flex d-flex justify-content-center">
+                <button type="submit" className="btn btn-outline-primary">
+                  Predict
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-outline-danger mx-2"
+                  onClick={handleClear}
+                >
+                  Clear
+                </button>
               </div>
-            )}
+            </form>
           </div>
         </div>
       </div>
