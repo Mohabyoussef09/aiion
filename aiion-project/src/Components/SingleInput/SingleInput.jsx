@@ -1,275 +1,15 @@
-// import React, { useState } from "react";
-
-// import { useFormik } from "formik";
-
-// import axios from "axios";
-
-// function SingleInput() {
-
-//   function handleSingleInputs(values) {
-//     console.log(values);
-
-//     axios
-//       .post('', values)
-//       .then((res) => {
-//         console.log(res);
-        
-//   })
-//       .catch((err) => {
-//         console.log(err);
-
-//       });
-//   }
-
-//   let formik = useFormik({
-//     initialValues: {
-//       a: "",
-//       b: "",
-//       c: "",
-//       d: "",
-//       e: "",
-//       f: "",
-//       g: "",
-//       h: "",
-//       i: "",
-//     },
-//     onSubmit: handleSingleInputs,
-//   });
-
-//   return (
-//     <>
-//       <div className="form">
-//         <div className="container p-5">
-//           <div className="card shadow-lg">
-//             <div className="card-body p-5">
-//               <h2 className="text-center mb-4 text-success">Free Trial</h2>
-//               <form onSubmit={formik.handleSubmit} className="row g-3">
-//                 <div className="form-group">
-//                   <label htmlFor="input1" className="form-label">
-//                     Input 1
-//                   </label>
-//                   <input
-//                     onBlur={formik.handleBlur}
-//                     onChange={formik.handleChange}
-//                     value={formik.values.a}
-//                     name="a"
-//                     type="text"
-//                     className="form-control form-control-lg"
-//                     id="input1"
-//                     placeholder={`Enter value for Input 1`}
-//                   />
-//                   <label htmlFor="input2" className="form-label">
-//                     Input 2
-//                   </label>
-//                   <input
-//                     onBlur={formik.handleBlur}
-//                     onChange={formik.handleChange}
-//                     value={formik.values.b}
-//                     name="b"
-//                     type="text"
-//                     className="form-control form-control-lg"
-//                     id="input2"
-//                     placeholder={`Enter value for Input 2`}
-//                   />
-//                   <label htmlFor="input3" className="form-label">
-//                     Input 3
-//                   </label>
-//                   <input
-//                     onBlur={formik.handleBlur}
-//                     onChange={formik.handleChange}
-//                     value={formik.values.c}
-//                     name="c"
-//                     type="text"
-//                     className="form-control form-control-lg"
-//                     id="input3"
-//                     placeholder={`Enter value for Input 3`}
-//                   />
-//                   <label htmlFor="input4" className="form-label">
-//                     Input 4
-//                   </label>
-//                   <input
-//                     onBlur={formik.handleBlur}
-//                     onChange={formik.handleChange}
-//                     value={formik.values.d}
-//                     name="d"
-//                     type="text"
-//                     className="form-control form-control-lg"
-//                     id="input4"
-//                     placeholder={`Enter value for Input 4`}
-//                   />
-//                   <label htmlFor="input5" className="form-label">
-//                     Input 5
-//                   </label>
-//                   <input
-//                     onBlur={formik.handleBlur}
-//                     onChange={formik.handleChange}
-//                     value={formik.values.e}
-//                     name="e"
-//                     type="text"
-//                     className="form-control form-control-lg"
-//                     id="input5"
-//                     placeholder={`Enter value for Input 5`}
-//                   />
-//                   <label htmlFor="input6" className="form-label">
-//                     Input 6
-//                   </label>
-//                   <input
-//                     onBlur={formik.handleBlur}
-//                     onChange={formik.handleChange}
-//                     value={formik.values.f}
-//                     name="f"
-//                     type="text"
-//                     className="form-control form-control-lg"
-//                     id="input6"
-//                     placeholder={`Enter value for Input 6`}
-//                   />
-//                   <label htmlFor="input7" className="form-label">
-//                     Input 7
-//                   </label>
-//                   <input
-//                     onBlur={formik.handleBlur}
-//                     onChange={formik.handleChange}
-//                     value={formik.values.g}
-//                     name="g"
-//                     type="text"
-//                     className="form-control form-control-lg"
-//                     id="input7"
-//                     placeholder={`Enter value for Input 7`}
-//                   />
-//                   <label htmlFor="input8" className="form-label">
-//                     Input 8
-//                   </label>
-//                   <input
-//                     onBlur={formik.handleBlur}
-//                     onChange={formik.handleChange}
-//                     value={formik.values.h}
-//                     name="h"
-//                     type="text"
-//                     className="form-control form-control-lg"
-//                     id="input8"
-//                     placeholder={`Enter value for Input 8`}
-//                   />
-//                   <label htmlFor="input9" className="form-label">
-//                     Input 9
-//                   </label>
-//                   <input
-//                     onBlur={formik.handleBlur}
-//                     onChange={formik.handleChange}
-//                     value={formik.values.i}
-//                     name="i"
-//                     type="text"
-//                     className="form-control form-control-lg"
-//                     id="input9"
-//                     placeholder={`Enter value for Input 9`}
-//                   />
-//                 </div>
-//                 <button type="submit" className="btn btn-success btn-lg w-100">
-//                   Predict
-//                 </button>
-//               </form>
-              
-
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default SingleInput;
-
-
-// import React from "react";
-// import { useFormik } from "formik";
-// import axios from "axios";
-
-// function SingleInput() {
-
-//   function handleSingleInputs(values) {
-//     console.log(values);
-
-//     axios
-//       .post('YOUR_API_ENDPOINT', values) // Replace 'YOUR_API_ENDPOINT' with the actual endpoint
-//       .then((res) => {
-//         console.log(res);
-//         // Handle success, maybe show a success message or redirect
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//         // Handle error, maybe show an error message
-//       });
-//   }
-
-//   const formik = useFormik({
-//     initialValues: {
-//       a: "",
-//       b: "",
-//       c: "",
-//       d: "",
-//       e: "",
-//       f: "",
-//       g: "",
-//       h: "",
-//       i: "",
-//     },
-//     onSubmit: handleSingleInputs,
-//   });
-
-//   return (
-//     <>
-//       <div className="form">
-//         <div className="container p-5">
-//           <div className="card shadow-lg">
-//             <div className="card-body p-5">
-//               <h2 className="text-center mb-4 text-success">Free Trial</h2>
-//               <form onSubmit={formik.handleSubmit} className="row g-3">
-//                 {["a", "b", "c", "d", "e", "f", "g", "h", "i"].map((inputName, index) => (
-//                   <div key={inputName} className="form-group">
-//                     <label htmlFor={`input${index + 1}`} className="form-label">
-//                       {`Input ${index + 1}`}
-//                     </label>
-//                     <input
-//                       onBlur={formik.handleBlur}
-//                       onChange={formik.handleChange}
-//                       value={formik.values[inputName]}
-//                       name={inputName}
-//                       type="text"
-//                       className="form-control form-control-lg"
-//                       id={`input${index + 1}`}
-//                       placeholder={`Enter value for Input ${index + 1}`}
-//                     />
-//                   </div>
-//                 ))}
-//                 <button type="submit" className="btn btn-success btn-lg w-100">
-//                   Predict
-//                 </button>
-//               </form>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default SingleInput;
-
-
-
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import axios from "axios";
 
 function SingleInput() {
-
-    const [sum, setSum] = useState(null);
+  const [sum, setSum] = useState(null);
 
   function handleSingleInputs(values) {
     console.log(values);
 
     axios
-      .post('http://localhost:3000/sum', values)
+      .post("http://localhost:3000/sum", values)
       .then((res) => {
         console.log(res.data);
         setSum(res.data.sum);
@@ -296,40 +36,113 @@ function SingleInput() {
 
   return (
     <>
-      <div className="form">
-        <div className="container p-5">
-          <div className="card shadow-lg">
-            <div className="card-body p-5">
-              <h2 className="text-center mb-4 text-success">Free Trial</h2>
-              <form onSubmit={formik.handleSubmit} className="row g-3">
-                {["a", "b", "c", "d", "e", "f", "g", "h", "i"].map((inputName, index) => (
-                  <div key={inputName} className="form-group">
-                    <label htmlFor={`input${index + 1}`} className="form-label">
-                      {`Input ${index + 1}`}
-                    </label>
-                    <input
-                      onBlur={formik.handleBlur}
-                      onChange={formik.handleChange}
-                      value={formik.values[inputName]}
-                      name={inputName}
-                      type="text"
-                      className="form-control form-control-lg"
-                      id={`input${index + 1}`}
-                      placeholder={`Enter value for Input ${index + 1}`}
-                    />
-                  </div>
-                ))}
-                <button type="submit" className="btn btn-success btn-lg w-100">
-                  Predict
-                </button>
-              </form>
-
-              {sum !== null && (
-                <div className="mt-4">
-                  <h3 className="text-center">Sum: {sum}</h3>
+      <div className="container container-form my-5 rounded p-3">
+        <div className="row">
+          <div className="col-12 col-md-3 p-4 text-center text-md-start welcome-section">
+            <h3 className="mb-3">Welcome</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Laboriosam harum accusantium excepturi ex fugiat tempore!
+            </p>
+            <button className="btn btn-light w-100 mt-3">Login</button>
+          </div>
+          <div className="col-12 col-md-9 form-section text-dark p-4">
+            <h3 className="mb-4">Free Trial</h3>
+            <form onSubmit={formik.handleSubmit}>
+              <div className="row">
+                <div className="col-12 col-md-6 mb-3">
+                  <input
+                    type="text"
+                    className="form-control mb-3"
+                    placeholder="Input 1"
+                    name="a"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.a}
+                  />
+                  <input
+                    type="text"
+                    className="form-control mb-3"
+                    placeholder="Input 2"
+                    name="b"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.b}
+                  />
+                  <input
+                    type="text"
+                    className="form-control mb-3"
+                    placeholder="Input 3"
+                    name="c"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.c}
+                  />
+                  <input
+                    type="text"
+                    className="form-control mb-3"
+                    placeholder="Input 4"
+                    name="d"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.d}
+                  />
+                  <input
+                    type="text"
+                    className="form-control mb-3"
+                    placeholder="Input 5"
+                    name="e"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.e}
+                  />
                 </div>
-              )}
-            </div>
+                <div className="col-12 col-md-6 mb-3">
+                  <input
+                    type="text"
+                    className="form-control mb-3"
+                    placeholder="Input 6"
+                    name="f"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.f}
+                  />
+                  <input
+                    type="text"
+                    className="form-control mb-3"
+                    placeholder="Input 7"
+                    name="g"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.g}
+                  />
+                  <input
+                    type="text"
+                    className="form-control mb-3"
+                    placeholder="Input 8"
+                    name="h"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.h}
+                  />
+                  <input
+                    type="text"
+                    className="form-control mb-3"
+                    placeholder="Input 9"
+                    name="i"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.i}
+                  />
+                </div>
+              </div>
+              <button type="submit" className="btn btn-outline-primary w-100">Predict</button>
+            </form>
+            {sum !== null && (
+              <div className="mt-4">
+                <h4 className="text-center">Sum: {sum}</h4>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -338,4 +151,3 @@ function SingleInput() {
 }
 
 export default SingleInput;
-
