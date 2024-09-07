@@ -17,11 +17,11 @@ function Footer() {
           <div className="footer-text text-center text-md-start">
             <p>&copy; 2024 Company Name. All rights reserved.</p>
             <p>
-              <a className="text-decoration-none" href="#">
+              <a href="#">
                 Privacy Policy
               </a>{" "}
               |{" "}
-              <a className="text-decoration-none" href="#">
+              <a href="#">
                 Terms of Service
               </a>
             </p>

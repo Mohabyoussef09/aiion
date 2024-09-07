@@ -9,7 +9,7 @@ function SingleInput() {
 
   function handleSingleInputs(values) {
     setLoading(true);
-  
+
     // Ensure all 9 input values are being sent correctly
     const requestData = {
       ph: values.ph,
@@ -20,15 +20,15 @@ function SingleInput() {
       ca: values.ca,
       cl: values.cl,
       sio2: values.sio2,
-      f: values.f
+      f: values.f,
     };
-  
+
     axios
       .post("http://127.0.0.1:8000/temperature", requestData) // Adjust the URL if needed
       .then((res) => {
         setTimeout(() => {
           console.log(res);
-  
+
           // Assuming the API response format is { "temperature": 22.2 }
           setResponse(res.data.temperature);
           setLoading(false);
@@ -39,7 +39,7 @@ function SingleInput() {
         setLoading(false);
       });
   }
-  
+
   const formik = useFormik({
     initialValues: {
       ph: "",
@@ -67,17 +67,17 @@ function SingleInput() {
           <div className="col-md-2">
             <h3>Explanation</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Possimus, nesciunt. Porro, fuga tenetur modi voluptates id
-              maiores repudiandae doloremque quibusdam.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
+              nesciunt. Porro, fuga tenetur modi voluptates id maiores
+              repudiandae doloremque quibusdam.
             </p>
           </div>
-          <div className="col-md-7 form-section text-dark p-4">
-            <h3 className="mb-4">Free Trial</h3>
+          <div className="col-md-7 form-section p-4">
+            <h3 className="mb-4">Try Model</h3>
             <form onSubmit={formik.handleSubmit}>
               <div className="row">
                 <div className="col-12 col-md-6 mb-3">
-                  <label htmlFor="ph">ph</label>
+                  <label htmlFor="ph">PH</label>
                   <input
                     type="text"
                     className="form-control mb-3"
@@ -88,7 +88,7 @@ function SingleInput() {
                     value={formik.values.ph}
                   />
 
-                  <label htmlFor="ec">ec</label>
+                  <label htmlFor="ec">EC</label>
                   <input
                     type="text"
                     className="form-control mb-3"
@@ -99,7 +99,7 @@ function SingleInput() {
                     value={formik.values.ec}
                   />
 
-                  <label htmlFor="k">k</label>
+                  <label htmlFor="k">K</label>
                   <input
                     type="text"
                     className="form-control mb-3"
@@ -110,7 +110,7 @@ function SingleInput() {
                     value={formik.values.k}
                   />
 
-                  <label htmlFor="na">na</label>
+                  <label htmlFor="na">NA</label>
                   <input
                     type="text"
                     className="form-control mb-3"
@@ -121,7 +121,7 @@ function SingleInput() {
                     value={formik.values.na}
                   />
 
-                  <label htmlFor="mg">mg</label>
+                  <label htmlFor="mg">MG</label>
                   <input
                     type="text"
                     className="form-control mb-3"
@@ -133,7 +133,7 @@ function SingleInput() {
                   />
                 </div>
                 <div className="col-12 col-md-6 mb-3">
-                  <label htmlFor="ca">ca</label>
+                  <label htmlFor="ca">CA</label>
                   <input
                     type="text"
                     className="form-control mb-3"
@@ -144,7 +144,7 @@ function SingleInput() {
                     value={formik.values.ca}
                   />
 
-                  <label htmlFor="cl">cl</label>
+                  <label htmlFor="cl">CL</label>
                   <input
                     type="text"
                     className="form-control mb-3"
@@ -155,7 +155,7 @@ function SingleInput() {
                     value={formik.values.cl}
                   />
 
-                  <label htmlFor="sio2">sio2</label>
+                  <label htmlFor="sio2">SIO2</label>
                   <input
                     type="text"
                     className="form-control mb-3"
@@ -166,7 +166,7 @@ function SingleInput() {
                     value={formik.values.sio2}
                   />
 
-                  <label htmlFor="f">f</label>
+                  <label htmlFor="f">F</label>
                   <input
                     type="text"
                     className="form-control mb-3"
@@ -179,12 +179,12 @@ function SingleInput() {
                 </div>
               </div>
               <div className="flex d-flex justify-content-center">
-                <button type="submit" className="btn btn-outline-primary">
+                <button type="submit" className="btn btn-success">
                   Predict
                 </button>
                 <button
                   type="button"
-                  className="btn btn-outline-danger mx-2"
+                  className="btn btn-danger mx-2"
                   onClick={handleClear}
                 >
                   Clear
@@ -212,7 +212,51 @@ function SingleInput() {
                   <tbody>
                     <tr>
                       <td>Temperature</td>
-                      <td>{response !== null ? <span>{response}</span> : "N/A"}</td>
+                      <td>
+                        {response !== null ? <span>{response}</span> : "N/A"}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Quartz</td>
+                      <td>
+                        {response !== null ? <span>{response}</span> : "N/A"}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Am.Silica</td>
+                      <td>
+                        {response !== null ? <span>{response}</span> : "N/A"}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Chalcedony</td>
+                      <td>
+                        {response !== null ? <span>{response}</span> : "N/A"}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Na-K-Ca</td>
+                      <td>
+                        {response !== null ? <span>{response}</span> : "N/A"}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Na-K</td>
+                      <td>
+                        {response !== null ? <span>{response}</span> : "N/A"}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>K-Mg</td>
+                      <td>
+                        {response !== null ? <span>{response}</span> : "N/A"}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Na-Li</td>
+                      <td>
+                        {response !== null ? <span>{response}</span> : "N/A"}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
