@@ -64,15 +64,15 @@ function SingleInput() {
     <>
       <div className="container container-form my-5 rounded p-3">
         <div className="row">
-          <div className="col-md-2">
+          <div className="col-md-3">
             <h3>Explanation</h3>
-            <p>
+            <p className="text-white">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
               nesciunt. Porro, fuga tenetur modi voluptates id maiores
               repudiandae doloremque quibusdam.
             </p>
           </div>
-          <div className="col-md-7 form-section p-4">
+          <div className="col-md-6 form-section p-4">
             <h3 className="mb-4">Try Model</h3>
             <form onSubmit={formik.handleSubmit}>
               <div className="row">
@@ -201,7 +201,7 @@ function SingleInput() {
               ) : (
                 <table
                   className="table table-striped table-bordered table-hover table-sm table-responsive"
-                  style={{ display: response !== null ? "block" : "none" }}
+                  // style={{ display: response !== null ? "block" : "none" }}
                 >
                   <thead>
                     <tr>
@@ -219,43 +219,43 @@ function SingleInput() {
                     <tr>
                       <td>Quartz</td>
                       <td>
-                        {response !== null ? <span>{response}</span> : "N/A"}
+                        {response !== null ? <span>{response.quartz}</span> : "N/A"}
                       </td>
                     </tr>
                     <tr>
                       <td>Am.Silica</td>
                       <td>
-                        {response !== null ? <span>{response}</span> : "N/A"}
+                        {response !== null ? <span>{response.silica}</span> : "N/A"}
                       </td>
                     </tr>
                     <tr>
                       <td>Chalcedony</td>
                       <td>
-                        {response !== null ? <span>{response}</span> : "N/A"}
+                        {response !== null ? <span>{response.chalcedony}</span> : "N/A"}
                       </td>
                     </tr>
                     <tr>
                       <td>Na-K-Ca</td>
                       <td>
-                        {response !== null ? <span>{response}</span> : "N/A"}
+                        {response !== null ? <span>{response.na-k-ca}</span> : "N/A"}
                       </td>
                     </tr>
                     <tr>
                       <td>Na-K</td>
                       <td>
-                        {response !== null ? <span>{response}</span> : "N/A"}
+                        {response !== null ? <span>{response.na-k}</span> : "N/A"}
                       </td>
                     </tr>
                     <tr>
                       <td>K-Mg</td>
                       <td>
-                        {response !== null ? <span>{response}</span> : "N/A"}
+                        {response !== null ? <span>{response.k-mg}</span> : "N/A"}
                       </td>
                     </tr>
                     <tr>
                       <td>Na-Li</td>
                       <td>
-                        {response !== null ? <span>{response}</span> : "N/A"}
+                        {response !== null ? <span>{response.na-li}</span> : "N/A"}
                       </td>
                     </tr>
                   </tbody>

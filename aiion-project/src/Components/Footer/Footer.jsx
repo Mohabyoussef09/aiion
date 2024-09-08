@@ -5,8 +5,8 @@ import footerImg from "../../assets/images/logo.jpg";
 function Footer() {
   return (
     <>
-      <footer className="footer-container py-4">
-        <div className="footer-content d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <footer className="footer-container py-4 bg-body-tertiary">
+        <div className="container footer-content d-flex flex-column flex-md-row justify-content-between align-items-center mx-auto">
           <div className="footer-logo mb-3 mb-md-0">
             <img
               src={footerImg}

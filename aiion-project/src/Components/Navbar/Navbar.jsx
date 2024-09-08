@@ -8,9 +8,9 @@ import logo from "../../assets/images/logo.jpg";
 function Navbar() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg p-0">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary p-0">
         <div className="container">
-          <a className="navbar-brand" href="/">
+        <a className="navbar-brand" href="/">
             <img width={100} src={logo} alt="Aiion Page Logo" />
           </a>
           <button
@@ -88,6 +88,7 @@ function Navbar() {
               </li>
             </ul>
           </div>
+
         </div>
       </nav>
     </>

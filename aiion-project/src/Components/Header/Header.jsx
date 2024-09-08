@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import img from "../../assets/images/circle-bin.avif";
+import img from "../../assets/images/data.webp";
 
 function Header() {
   const [paragraphs, setParagraphs] = useState([]);
@@ -21,23 +21,23 @@ function Header() {
 
   return (
     <>
-      <div className="header py-5">
-        <div className="container">
-          <div className="row py-5 gx-5">
-            <div className="col-md-7 d-flex flex-column justify-content-center text-section">
-                <p>{paragraphs[0]}</p>
+      <div className="header">
+        <div className="container py-5">
+          <div className="row py-5">
+            <div className="col-md-6 d-flex flex-column justify-content-center text-section">
+                <h4>{paragraphs[0]}</h4>
 
               <a
                 href="https://www.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-uppercase text-decoration-none text-dark fs-6 fw-bold"
+                className="text-uppercase fs-6 fw-bold"
               >
                 Learn More
-                <i className="fas fa-arrow-right ms-2 text-success"></i>
+                <i className="fas fa-arrow-right ms-2"></i>
               </a>
             </div>
-            <div className="col-md-5 d-flex justify-content-center align-items-center circle-image-wrapper">
+            <div className="col-md-6 circle-image-wrapper d-flex justify-content-center">
               <img
                 src={img}
                 className="circle-image img-fluid animated-image"
