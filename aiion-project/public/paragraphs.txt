@@ -1,5 +1,5 @@
 [
-  "This is the first paragraph.",
+  "At AIiON, we harness the power of artificial intelligence to revolutionize geothermal resource exploration. Our cutting-edge tool predicts the subsurface temperature of deep geothermal reservoirs with remarkable accuracy. Imagine having the ability to analyse vast datasets and identify optimal drilling locations, all while minimizing risks and costs.",
   "This is the second paragraph.",
   "This is the third paragraph."
 ]

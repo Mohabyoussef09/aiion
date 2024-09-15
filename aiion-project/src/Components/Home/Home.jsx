@@ -9,7 +9,7 @@ function Home() {
   return (
     <>
       <Header/>
-      <Info/>
+      {/* <Info/> */}
       <Counter />
       <DigitalData/>
     </>

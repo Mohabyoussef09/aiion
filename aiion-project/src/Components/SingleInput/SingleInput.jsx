@@ -6,31 +6,19 @@ import Loading from "../Loading/Loading";
 function SingleInput() {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [chargeBalance, setChargeBalance] = useState(null);
 
   function handleSingleInputs(values) {
+    console.log(values);
     setLoading(true);
 
-    // Ensure all 9 input values are being sent correctly
-    const requestData = {
-      ph: values.ph,
-      ec: values.ec,
-      k: values.k,
-      na: values.na,
-      mg: values.mg,
-      ca: values.ca,
-      cl: values.cl,
-      sio2: values.sio2,
-      f: values.f,
-    };
-
     axios
-      .post("http://127.0.0.1:8000/temperature", requestData) // Adjust the URL if needed
+      .post("http://127.0.0.1:8000/sum-inputs", values)
+
       .then((res) => {
         setTimeout(() => {
           console.log(res);
-
-          // Assuming the API response format is { "temperature": 22.2 }
-          setResponse(res.data.temperature);
+          setResponse(res.data.sum);
           setLoading(false);
         }, 2000);
       })
@@ -55,133 +43,180 @@ function SingleInput() {
     onSubmit: handleSingleInputs,
   });
 
+
+  function handleChargeBalance() {
+      const { ph, ca } = formik.values;
+      const res = Number(ph) + Number(ca);
+      setChargeBalance(res);
+    }
+
   function handleClear() {
     formik.resetForm();
     setResponse(null);
+    setChargeBalance(null);
   }
 
   return (
     <>
-      <div className="container container-form my-5 rounded p-3">
+      <div className="container container-form my-5 rounded py-3">
         <div className="row">
-          <div className="col-md-3">
-            <h3>Explanation</h3>
-            <p className="text-white">
+          <div className="col-md-3 p-3">
+            <h3 className="text-white text-center">Explanation</h3>
+            <p className="text-white text-center">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
               nesciunt. Porro, fuga tenetur modi voluptates id maiores
               repudiandae doloremque quibusdam.
             </p>
           </div>
-          <div className="col-md-6 form-section p-4">
-            <h3 className="mb-4">Try Model</h3>
+          <div className="col-md-6 form-section p-3">
+            <h3 className="text-center mb-4">Try Model</h3>
             <form onSubmit={formik.handleSubmit}>
-              <div className="row">
-                <div className="col-12 col-md-6 mb-3">
-                  <label htmlFor="ph">PH</label>
-                  <input
-                    type="text"
-                    className="form-control mb-3"
-                    id="ph"
-                    name="ph"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.ph}
-                  />
+              <table className="table table-striped table-bordered table-hover table-sm table-responsive">
+                <thead>
+                  <tr>
+                    <th className="text-center align-middle">
+                      System Parameters
+                    </th>
+                    <th className="text-center align-middle">Cations</th>
+                    <th className="text-center align-middle">Anions</th>
+                    <th className="text-center align-middle">Optional</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input
+                        name="ph"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.ph}
+                        className="form-control"
+                        type="text"
+                        placeholder="pH"
+                      />
 
-                  <label htmlFor="ec">EC</label>
-                  <input
-                    type="text"
-                    className="form-control mb-3"
-                    id="ec"
-                    name="ec"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.ec}
-                  />
+                      <input
+                        className="form-control"
+                        type="text"
+                        placeholder="Ionic Strength"
+                      />
 
-                  <label htmlFor="k">K</label>
-                  <input
-                    type="text"
-                    className="form-control mb-3"
-                    id="k"
-                    name="k"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.k}
-                  />
+                      <input
+                        name="sio2"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.sio2}
+                        className="form-control"
+                        type="text"
+                        placeholder="Sio2"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        name="k"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.k}
+                        className="form-control"
+                        type="text"
+                        placeholder="K+"
+                      />
+                      <input
+                        name="na"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.na}
+                        className="form-control"
+                        type="text"
+                        placeholder="Na+"
+                      />
+                      <input
+                        name="mg"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.mg}
+                        className="form-control"
+                        type="text"
+                        placeholder="Mg2+"
+                      />
+                      <input
+                        name="ca"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.ca}
+                        className="form-control"
+                        type="text"
+                        placeholder="Ca2+"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        name="cl"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.cl}
+                        className="form-control"
+                        type="text"
+                        placeholder="Cl-"
+                      />
 
-                  <label htmlFor="na">NA</label>
-                  <input
-                    type="text"
-                    className="form-control mb-3"
-                    id="na"
-                    name="na"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.na}
-                  />
+                      <input
+                        className="form-control"
+                        type="text"
+                        placeholder="SO4-2"
+                      />
 
-                  <label htmlFor="mg">MG</label>
-                  <input
-                    type="text"
-                    className="form-control mb-3"
-                    id="mg"
-                    name="mg"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.mg}
-                  />
-                </div>
-                <div className="col-12 col-md-6 mb-3">
-                  <label htmlFor="ca">CA</label>
-                  <input
-                    type="text"
-                    className="form-control mb-3"
-                    id="ca"
-                    name="ca"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.ca}
-                  />
+                      <input
+                        className="form-control"
+                        type="text"
+                        placeholder="HCO3-"
+                      />
+                    </td>
 
-                  <label htmlFor="cl">CL</label>
-                  <input
-                    type="text"
-                    className="form-control mb-3"
-                    id="cl"
-                    name="cl"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.cl}
-                  />
-
-                  <label htmlFor="sio2">SIO2</label>
-                  <input
-                    type="text"
-                    className="form-control mb-3"
-                    id="sio2"
-                    name="sio2"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.sio2}
-                  />
-
-                  <label htmlFor="f">F</label>
-                  <input
-                    type="text"
-                    className="form-control mb-3"
-                    id="f"
-                    name="f"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.f}
-                  />
-                </div>
-              </div>
+                    <td>
+                      <input
+                        className="form-control"
+                        type="text"
+                        placeholder="SO4"
+                      />
+                      <input
+                        className="form-control"
+                        type="text"
+                        placeholder="HCO3"
+                      />
+                      <input
+                        className="form-control"
+                        type="text"
+                        placeholder="Sample Depth Input"
+                      />
+                      <input
+                        className="form-control"
+                        type="text"
+                        placeholder="Surface Temperature"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
               <div className="flex d-flex justify-content-center">
-                <button type="submit" className="btn btn-success">
+                <button
+                  type="button"
+                  onClick={handleChargeBalance}
+                  className="btn btn-secondary mx-2"
+                >
+                  Charge Balance %
+                </button>
+
+                <button
+                  type="submit"
+                  className="btn predict-btn"
+                  disabled={
+                    chargeBalance === null || chargeBalance === "Invalid"
+                  }
+                >
                   Predict
                 </button>
+
                 <button
                   type="button"
                   className="btn btn-danger mx-2"
@@ -193,9 +228,28 @@ function SingleInput() {
             </form>
           </div>
 
-          <div className="col-md-3 text-center text-md-start welcome-section">
-            <h3 className="mb-3 text-center">Results</h3>
-            <div className="d-flex justify-content-center align-items-center h-75">
+          <div className="col-md-3 p-3">
+            <h3 className="text-center text-white">Results</h3>
+            <div className="d-flex justify-content-center flex-column align-items-center">
+              <table className="table table-striped table-bordered table-hover table-sm table-responsive">
+                <thead>
+                  <tr>
+                    <th className="text-center">Charge Balance %</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="text-center">
+                      {chargeBalance !== null ? (
+                        <span>{chargeBalance}</span>
+                      ) : (
+                        "N/A"
+                      )}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
               {loading ? (
                 <Loading />
               ) : (
@@ -217,50 +271,55 @@ function SingleInput() {
                       </td>
                     </tr>
                     <tr>
-                      <td>Quartz</td>
+                      <td>Quartz⁴</td>
                       <td>
-                        {response !== null ? <span>{response.quartz}</span> : "N/A"}
+                        {response !== null ? <span>{response}</span> : "N/A"}
                       </td>
                     </tr>
                     <tr>
-                      <td>Am.Silica</td>
+                      <td>Na/K²</td>
                       <td>
-                        {response !== null ? <span>{response.silica}</span> : "N/A"}
+                        {response !== null ? <span>{response}</span> : "N/A"}
                       </td>
                     </tr>
                     <tr>
-                      <td>Chalcedony</td>
+                      <td>Na/K⁷</td>
                       <td>
-                        {response !== null ? <span>{response.chalcedony}</span> : "N/A"}
+                        {response !== null ? <span>{response}</span> : "N/A"}
                       </td>
                     </tr>
                     <tr>
                       <td>Na-K-Ca</td>
                       <td>
-                        {response !== null ? <span>{response.na-k-ca}</span> : "N/A"}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Na-K</td>
-                      <td>
-                        {response !== null ? <span>{response.na-k}</span> : "N/A"}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>K-Mg</td>
-                      <td>
-                        {response !== null ? <span>{response.k-mg}</span> : "N/A"}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Na-Li</td>
-                      <td>
-                        {response !== null ? <span>{response.na-li}</span> : "N/A"}
+                        {response !== null ? <span>{response}</span> : "N/A"}
                       </td>
                     </tr>
                   </tbody>
                 </table>
               )}
+
+              <table className="table table-striped table-bordered table-hover table-sm table-responsive">
+                <thead>
+                  <tr>
+                    <th className="text-center">Geothermal Gradient</th>
+                    <th className="text-center">Water Type</th>
+                    <th className="text-center">Water Maturity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="text-center">
+                      {response !== null ? <span>{response}</span> : "N/A"}
+                    </td>
+                    <td className="text-center">
+                      {response !== null ? <span>{response}</span> : "N/A"}
+                    </td>
+                    <td className="text-center">
+                      {response !== null ? <span>{response}</span> : "N/A"}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

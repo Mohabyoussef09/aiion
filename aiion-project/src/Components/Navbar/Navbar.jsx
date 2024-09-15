@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 
 import { React } from "react";
 import { Link } from "react-router-dom";
@@ -27,13 +26,13 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
               <li className="nav-item dropdown mx-2">
-                <a
+                <Link
                   className="nav-link dropdown-toggle text-uppercase"
-                  href="#"
+                  to={'/origin'}
                   role="button"
                 >
                   the origin
-                </a>
+                </Link>
                 <ul className="dropdown-menu">
                   <li>
                     <Link to={"/about"} className="dropdown-item">
@@ -71,13 +70,14 @@ function Navbar() {
               </li>
 
               <li className="nav-item dropdown mx-2">
-                <a
+                <Link
+                to={'/contact'}
                   className="nav-link dropdown-toggle text-uppercase"
                   href="#"
                   role="button"
                 >
                   contact us
-                </a>
+                </Link>
                 <ul className="dropdown-menu">
                   <li>
                     <Link to={"/about"} className="dropdown-item">

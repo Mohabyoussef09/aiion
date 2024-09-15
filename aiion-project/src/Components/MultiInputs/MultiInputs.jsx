@@ -62,7 +62,7 @@ function MultiInputs() {
 
             <button
               onClick={handleUpload}
-              className="btn btn-upload ms-3"
+              className="btn btn-predict ms-3"
               disabled={!file}
             >
               Predict

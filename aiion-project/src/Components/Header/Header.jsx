@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import img from "../../assets/images/data.webp";
+import videoSrc from "../../assets/videos/Aiion-video.mp4";
+import { Link } from "react-router-dom";
+
 
 function Header() {
   const [paragraphs, setParagraphs] = useState([]);
@@ -25,28 +27,25 @@ function Header() {
         <div className="container py-5">
           <div className="row py-5">
             <div className="col-md-6 d-flex flex-column justify-content-center text-section">
-                <h4>{paragraphs[0]}</h4>
+              <p className="fs-5">{paragraphs[0]}</p>
 
-              <a
-                href="https://www.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-uppercase fs-6 fw-bold"
+              <Link
+                to="/learnmore"
+                className="text-uppercase fs-6 fw-bold mt-2"
               >
                 Learn More
                 <i className="fas fa-arrow-right ms-2"></i>
-              </a>
+              </Link>
             </div>
-            <div className="col-md-6 circle-image-wrapper d-flex justify-content-center">
-              <img
-                src={img}
-                className="circle-image img-fluid animated-image"
-                alt="Animated Image"
-              />
+            <div className="video-container col-md-6">
+              <video width="100%" controls>
+                <source src={videoSrc} type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
       </div>
+
     </>
   );
 }

@@ -1,10 +1,9 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 
 function About() {
     return (
         <h1>About</h1>
-    );
+    )
 }
 
-export default About;
+export default About

@@ -5,7 +5,7 @@ function Counter() {
 
   useEffect(() => {
     const fetchFileData = () => {
-      fetch("./file.txt")
+      fetch("./counter.txt")
         .then((response) => response.text())
         .then((text) => {
           setFileContent(text);
