@@ -1,6 +1,10 @@
-
-
 import React, { useState } from "react";
+
+const handleDownload = () => {
+  const sheetUrl =
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTeI-OxNquR2Gym7hhgbW77k-Py5D949E94uT-M8fjyFPVC4Bd-rSAK44f1rUgVj3jLh8SbaI5WLr1W/pub?output=pdf";
+  window.open(sheetUrl, "_blank");
+};
 
 function MultiInputs() {
   const [file, setFile] = useState(null);
@@ -44,9 +48,7 @@ function MultiInputs() {
       <div className="row">
         <div className="col-md-12 d-flex flex-column align-items-center upload-box p-5">
           <i className="fas fa-file-upload fa-5x mb-3 upload-icon"></i>
-          <p className="upload-text ">
-            Drag and drop a file to upload
-          </p>
+          <p className="upload-text">Drag and drop a file to upload</p>
 
           <input
             type="file"
@@ -66,6 +68,11 @@ function MultiInputs() {
               disabled={!file}
             >
               Predict
+            </button>
+
+            <button className="btn btn-download ms-3" onClick={handleDownload}>
+              <i className="fa-solid fa-eye me-2"></i>
+              Show Template
             </button>
           </div>
 

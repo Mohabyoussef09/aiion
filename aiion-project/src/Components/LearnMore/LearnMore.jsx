@@ -10,7 +10,7 @@ function LearnMore() {
 
   return (
     <>
-      <div className="learn-more bg-body-secondary py-5">
+      <div className="learn-more bg-body-tertiary py-5">
         <div className="container py-5">
           <div className="row">
             <div className="col-md-6">

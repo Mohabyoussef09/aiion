@@ -1,36 +1,40 @@
 import React, { useContext } from "react";
 
 function ExplorModel() {
-
   return (
     <>
-      <div className="explore-model py-5">
+      <div className="explore-model bg-body-tertiary py-5">
         <div className="container">
-          <div className="row justify-content-center">
+          <div className="row">
             <div className="col-md-12">
-              <div className="card shadow-lg border-0 rounded-3 bg-white">
+              <div className="card border border-bg-light-subtle rounded-3 shadow">
                 <div className="card-body p-5">
-                  <h1 className="card-title display-4 text-center mb-4">
+                  <h1 className="card-title mb-4 text-center">
                     Explore the Model
                   </h1>
                   <p className="card-text lead text-center text-muted">
                     AiIoN Runs In Single And Multiple Modes:
                   </p>
-                  <hr className="my-4" />
-                  <ul>
-                    <li className="mb-3 fs-5">
+                  <hr className="my-4"/>
+                  <ul className="list-unstyled">
+                    <li className="mb-3">
+                      <i className="fa-solid fa-check-circle me-2"></i>
                       <span>
-                        For single input: input your
-                        geochemical data in “The Model” tab.
+                        For single input: input your geochemical data in “The
+                        Model” tab.
                       </span>
                     </li>
-                    <li className="mb-3 fs-5">
+                    <li className="mb-3">
+                      <i className="fa-solid fa-check-circle me-2"></i>
                       <span>
-                        For multiple inputs: you will require a
-                        CSV file with data organized similar to the
-                        <a href="multi" className="link-success mx-1 text-uppercase">
+                        For multiple inputs: you will require a CSV file with
+                        data organized similar to the
+                        <a
+                          href="multi"
+                          className="link-template text-uppercase fw-bold mx-1"
+                        >
                           template
-                        </a>
+                        </a>{" "}
                         file.
                       </span>
                     </li>
@@ -45,7 +49,7 @@ function ExplorModel() {
                     <div className="text-center mt-4">
                       <a
                         href="/"
-                        className="btn btn-success btn-lg rounded-pill"
+                        className="btn btn-explore rounded-pill"
                       >
                         Explore Now
                       </a>

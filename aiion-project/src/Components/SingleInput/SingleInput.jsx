@@ -7,18 +7,20 @@ function SingleInput() {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
   const [chargeBalance, setChargeBalance] = useState(null);
+  const [chargeLoading, setChargeLoading] = useState(false); 
+
 
   function handleSingleInputs(values) {
     console.log(values);
     setLoading(true);
 
     axios
-      .post("http://127.0.0.1:8000/sum-inputs", values)
+      .post("http://127.0.0.1:8000/temperature", values)
 
       .then((res) => {
         setTimeout(() => {
           console.log(res);
-          setResponse(res.data.sum);
+          setResponse(res.data);
           setLoading(false);
         }, 2000);
       })
@@ -31,23 +33,35 @@ function SingleInput() {
   const formik = useFormik({
     initialValues: {
       ph: "",
-      ec: "",
+      iStrength: "",
+      sio2: "",
       k: "",
       na: "",
-      mg: "",
-      ca: "",
+      mg2: "",
+      ca2: "",
       cl: "",
-      sio2: "",
-      f: "",
+      so4_2: "",
+      hco3_: "",
+      so4: "",
+      hco3: "",
+      sDepth: "",
+      surfaceTemp: "",
     },
     onSubmit: handleSingleInputs,
   });
 
 
   function handleChargeBalance() {
-      const { ph, ca } = formik.values;
-      const res = Number(ph) + Number(ca);
+    setChargeLoading(true); // Start loading
+
+    setTimeout(()=>{
+      const { ph, iStrength } = formik.values;
+      const res = Number(ph) + Number(iStrength);
       setChargeBalance(res);
+      setChargeLoading(false); // Start loading
+
+    } , 2000)
+    
     }
 
   function handleClear() {
@@ -96,6 +110,10 @@ function SingleInput() {
                       />
 
                       <input
+                       name="iStrength"
+                       onChange={formik.handleChange}
+                       onBlur={formik.handleBlur}
+                       value={formik.values.iStrength}
                         className="form-control"
                         type="text"
                         placeholder="Ionic Strength"
@@ -131,19 +149,19 @@ function SingleInput() {
                         placeholder="Na+"
                       />
                       <input
-                        name="mg"
+                        name="mg2"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        value={formik.values.mg}
+                        value={formik.values.mg2}
                         className="form-control"
                         type="text"
                         placeholder="Mg2+"
                       />
                       <input
-                        name="ca"
+                        name="ca2"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        value={formik.values.ca}
+                        value={formik.values.ca2}
                         className="form-control"
                         type="text"
                         placeholder="Ca2+"
@@ -161,12 +179,20 @@ function SingleInput() {
                       />
 
                       <input
+                        name="so4_2"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.so4_2}
                         className="form-control"
                         type="text"
                         placeholder="SO4-2"
                       />
 
                       <input
+                        name="hco3_"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.hco3_}
                         className="form-control"
                         type="text"
                         placeholder="HCO3-"
@@ -175,21 +201,37 @@ function SingleInput() {
 
                     <td>
                       <input
+                        name="so4"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.so4}
                         className="form-control"
                         type="text"
                         placeholder="SO4"
                       />
                       <input
+                        name="hco3"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.hco3}
                         className="form-control"
                         type="text"
                         placeholder="HCO3"
                       />
                       <input
+                        name="sDepth"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.sDepth}
                         className="form-control"
                         type="text"
                         placeholder="Sample Depth Input"
                       />
                       <input
+                        name="surfaceTemp"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.surfaceTemp}
                         className="form-control"
                         type="text"
                         placeholder="Surface Temperature"
@@ -204,8 +246,13 @@ function SingleInput() {
                   onClick={handleChargeBalance}
                   className="btn btn-secondary mx-2"
                 >
-                  Charge Balance %
+                  {chargeLoading ? (
+                    <i className="fa-solid fa-circle-notch fa-spin"></i> // Font Awesome loading icon
+                  ) : (
+                    "Charge Balance %"
+                  )}
                 </button>
+
 
                 <button
                   type="submit"
@@ -267,31 +314,31 @@ function SingleInput() {
                     <tr>
                       <td>Temperature</td>
                       <td>
-                        {response !== null ? <span>{response}</span> : "N/A"}
+                        {response !== null ? <span>{response.temp}</span> : "N/A"}
                       </td>
                     </tr>
                     <tr>
                       <td>Quartz⁴</td>
                       <td>
-                        {response !== null ? <span>{response}</span> : "N/A"}
+                        {response !== null ? <span>{response.quartz}</span> : "N/A"}
                       </td>
                     </tr>
                     <tr>
                       <td>Na/K²</td>
                       <td>
-                        {response !== null ? <span>{response}</span> : "N/A"}
+                        {response !== null ? <span>{response.na_k2}</span> : "N/A"}
                       </td>
                     </tr>
                     <tr>
                       <td>Na/K⁷</td>
                       <td>
-                        {response !== null ? <span>{response}</span> : "N/A"}
+                        {response !== null ? <span>{response.na_k7}</span> : "N/A"}
                       </td>
                     </tr>
                     <tr>
                       <td>Na-K-Ca</td>
                       <td>
-                        {response !== null ? <span>{response}</span> : "N/A"}
+                        {response !== null ? <span>{response.na_k_ca}</span> : "N/A"}
                       </td>
                     </tr>
                   </tbody>
@@ -309,13 +356,13 @@ function SingleInput() {
                 <tbody>
                   <tr>
                     <td className="text-center">
-                      {response !== null ? <span>{response}</span> : "N/A"}
+                      {response !== null ? <span>{response.geoGradient}</span> : "N/A"}
                     </td>
                     <td className="text-center">
-                      {response !== null ? <span>{response}</span> : "N/A"}
+                      {response !== null ? <span>{response.wType}</span> : "N/A"}
                     </td>
                     <td className="text-center">
-                      {response !== null ? <span>{response}</span> : "N/A"}
+                      {response !== null ? <span>{response.wMaturity}</span> : "N/A"}
                     </td>
                   </tr>
                 </tbody>

@@ -23,28 +23,35 @@ function Header() {
 
   return (
     <>
-      <div className="header">
-        <div className="container py-5">
-          <div className="row py-5">
-            <div className="col-md-6 d-flex flex-column justify-content-center text-section">
-              <p className="fs-5">{paragraphs[0]}</p>
+        <div className="header-section bg-body-tertiary">
+      <div className="container py-5">
+        <div className="row align-items-center">
+          <div className="col-md-6 text-section d-flex flex-column justify-content-center">
+            <h1 className="display-4 mb-3 animate-title">
+              Experience the Future
+            </h1>
+            <p className="fs-5 mb-3 text-dark">{paragraphs[0]}</p>
 
-              <Link
-                to="/learnmore"
-                className="text-uppercase fs-6 fw-bold mt-2"
-              >
-                Learn More
-                <i className="fas fa-arrow-right ms-2"></i>
-              </Link>
-            </div>
-            <div className="video-container col-md-6">
-              <video width="100%" controls>
+            <Link
+              to="/learnmore"
+              className="btn btn-gradient btn-lg text-uppercase fs-6 fw-bold"
+            >
+              Learn More
+              <i className="fas fa-arrow-right ms-2"></i>
+            </Link>
+          </div>
+
+          <div className="col-md-6 video-container mt-3">
+            <div className="video-wrapper">
+              <video width="100%" controls className="video-element">
                 <source src={videoSrc} type="video/mp4" />
               </video>
             </div>
           </div>
         </div>
       </div>
+    </div>
+
 
     </>
   );

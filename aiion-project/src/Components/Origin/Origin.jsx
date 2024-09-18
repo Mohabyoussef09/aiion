@@ -16,17 +16,16 @@ function Origin() {
   }, []);
   return (
     <>
-      <section className="bg-section d-flex align-items-center justify-content-center">
-        <div className="content-wrapper">
-          <h1 className="title animate__animated animate__fadeInDown">
-            {" "}
-            the origin
-          </h1>
-          <p className="paragraph animate__animated animate__fadeInUp">
-            {text}
-          </p>
-        </div>
-      </section>
+          <div className="origin bg-body-tertiary">
+      <div className="text-container">
+        <h1 className="title text-uppercase">the origin</h1>
+        <p className="paragraph">
+          {text}
+        </p>
+      </div>
+      <div className="background-image"></div>
+    </div>
+
     </>
   );
 }

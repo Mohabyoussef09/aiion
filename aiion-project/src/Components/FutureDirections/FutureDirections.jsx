@@ -9,12 +9,12 @@ function FutureDirections() {
 
   return (
     <>
-      <div className="future-directions py-5">
+      <div className="future-directions py-5 bg-body-tertiary">
         <div className="container">
           <h1 className="mb-5 text-center">Future Directions</h1>
 
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6 d-flex justify-content-center">
                 <img src={hand} className="w-50 rounded-circle" />
             </div>
             <div className="col-md-6 d-flex align-items-center">

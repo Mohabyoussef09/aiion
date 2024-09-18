@@ -35,12 +35,12 @@ function Navbar() {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to={"/about"} className="dropdown-item">
+                    <Link to={"/about"} className="dropdown-item text-uppercase">
                       About
                     </Link>
                   </li>
                   <li>
-                    <Link to={"/history"} className="dropdown-item">
+                    <Link to={"/history"} className="dropdown-item text-uppercase">
                       History
                     </Link>
                   </li>
@@ -57,12 +57,12 @@ function Navbar() {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to={"/single"} className="dropdown-item">
+                    <Link to={"/single"} className="dropdown-item text-uppercase">
                       Single Input
                     </Link>
                   </li>
                   <li>
-                    <Link to={"/multi"} className="dropdown-item">
+                    <Link to={"/multi"} className="dropdown-item text-uppercase">
                       Multi Inputs
                     </Link>
                   </li>
@@ -80,7 +80,7 @@ function Navbar() {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to={"/about"} className="dropdown-item">
+                    <Link to={"FAQs"} className="dropdown-item">
                       FAQs
                     </Link>
                   </li>
