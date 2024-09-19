@@ -7,8 +7,7 @@ function SingleInput() {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
   const [chargeBalance, setChargeBalance] = useState(null);
-  const [chargeLoading, setChargeLoading] = useState(false); 
-
+  const [chargeLoading, setChargeLoading] = useState(false);
 
   function handleSingleInputs(values) {
     console.log(values);
@@ -50,19 +49,19 @@ function SingleInput() {
     onSubmit: handleSingleInputs,
   });
 
-
   function handleChargeBalance() {
-    setChargeLoading(true); // Start loading
+    setChargeLoading(true); 
 
-    setTimeout(()=>{
-      const { ph, iStrength } = formik.values;
-      const res = Number(ph) + Number(iStrength);
-      setChargeBalance(res);
-      setChargeLoading(false); // Start loading
-
-    } , 2000)
-    
-    }
+    setTimeout(() => {
+      const { k, na, mg2, ca2, cl, so4_2, hco3_ } = formik.values;
+      const ct_sum = Number(k) + Number(na) + Number(mg2) + Number(ca2);
+      const an_sum = Number(cl) + Number(so4_2) + Number(hco3_);
+      const res = ((ct_sum - an_sum) / (ct_sum + an_sum)) * 100
+      const toFixed_res = Number(res.toFixed(2))      
+      setChargeBalance(toFixed_res);
+      setChargeLoading(false); 
+    }, 2000);
+  }
 
   function handleClear() {
     formik.resetForm();
@@ -99,142 +98,151 @@ function SingleInput() {
                 <tbody>
                   <tr>
                     <td>
+                      <label htmlFor="ph">pH</label>
                       <input
+                        id="ph"
                         name="ph"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.ph}
                         className="form-control"
                         type="text"
-                        placeholder="pH"
                       />
-
+                      <label htmlFor="iStrength">Ionic Strength</label>
                       <input
-                       name="iStrength"
-                       onChange={formik.handleChange}
-                       onBlur={formik.handleBlur}
-                       value={formik.values.iStrength}
+                        id="iStrength"
+                        name="iStrength"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.iStrength}
                         className="form-control"
                         type="text"
-                        placeholder="Ionic Strength"
                       />
-
+                      <label htmlFor="sio2">Sio2</label>
                       <input
+                        id="sio2"
                         name="sio2"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.sio2}
                         className="form-control"
                         type="text"
-                        placeholder="Sio2"
                       />
                     </td>
                     <td>
+                      <label htmlFor="k">K+</label>
                       <input
+                        id="k"
                         name="k"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.k}
                         className="form-control"
                         type="text"
-                        placeholder="K+"
                       />
+                      <label htmlFor="na">Na+</label>
                       <input
+                        id="na"
                         name="na"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.na}
                         className="form-control"
                         type="text"
-                        placeholder="Na+"
                       />
+                      <label htmlFor="mg2">Mg2+</label>
                       <input
+                        id="mg2"
                         name="mg2"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.mg2}
                         className="form-control"
                         type="text"
-                        placeholder="Mg2+"
                       />
+                      <label htmlFor="ca2">Ca2+</label>
                       <input
+                        id="ca2"
                         name="ca2"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.ca2}
                         className="form-control"
                         type="text"
-                        placeholder="Ca2+"
                       />
                     </td>
                     <td>
+                      <label htmlFor="cl">Cl-</label>
                       <input
+                        id="cl"
                         name="cl"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.cl}
                         className="form-control"
                         type="text"
-                        placeholder="Cl-"
                       />
-
+                      <label htmlFor="so4_2">SO4-2</label>
                       <input
+                        id="so4_2"
                         name="so4_2"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.so4_2}
                         className="form-control"
                         type="text"
-                        placeholder="SO4-2"
                       />
-
+                      <label htmlFor="hco3_">HCO3-</label>
                       <input
+                        id="hco3_"
                         name="hco3_"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.hco3_}
                         className="form-control"
                         type="text"
-                        placeholder="HCO3-"
                       />
                     </td>
-
                     <td>
+                      <label htmlFor="so4">SO4</label>
                       <input
+                        id="so4"
                         name="so4"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.so4}
                         className="form-control"
                         type="text"
-                        placeholder="SO4"
                       />
+                      <label htmlFor="hco3">HCO3</label>
                       <input
+                        id="hco3"
                         name="hco3"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.hco3}
                         className="form-control"
                         type="text"
-                        placeholder="HCO3"
                       />
+                      <label htmlFor="sDepth">Sample Depth Input</label>
                       <input
+                        id="sDepth"
                         name="sDepth"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.sDepth}
                         className="form-control"
                         type="text"
-                        placeholder="Sample Depth Input"
                       />
+                      <label htmlFor="surfaceTemp">Surface Temperature</label>
                       <input
+                        id="surfaceTemp"
                         name="surfaceTemp"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.surfaceTemp}
                         className="form-control"
                         type="text"
-                        placeholder="Surface Temperature"
                       />
                     </td>
                   </tr>
@@ -247,12 +255,11 @@ function SingleInput() {
                   className="btn btn-secondary mx-2"
                 >
                   {chargeLoading ? (
-                    <i className="fa-solid fa-circle-notch fa-spin"></i> // Font Awesome loading icon
+                    <i className="fa-solid fa-circle-notch fa-spin"></i>
                   ) : (
                     "Charge Balance %"
                   )}
                 </button>
-
 
                 <button
                   type="submit"
@@ -296,61 +303,107 @@ function SingleInput() {
                   </tr>
                 </tbody>
               </table>
-              {loading ? <Loading /> : 
-  <>
-    <table
-      className="table table-striped table-bordered table-hover table-sm table-responsive"
-    >
-      <thead>
-        <tr>
-          <th>Classical Geothermometers</th>
-          <th className="align-middle">T(C)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Temperature</td>
-          <td>{response !== null ? <span>{response.temp}</span> : "N/A"}</td>
-        </tr>
-        <tr>
-          <td>Quartz⁴</td>
-          <td>{response !== null ? <span>{response.quartz}</span> : "N/A"}</td>
-        </tr>
-        <tr>
-          <td>Na/K²</td>
-          <td>{response !== null ? <span>{response.na_k2}</span> : "N/A"}</td>
-        </tr>
-        <tr>
-          <td>Na/K⁷</td>
-          <td>{response !== null ? <span>{response.na_k7}</span> : "N/A"}</td>
-        </tr>
-        <tr>
-          <td>Na-K-Ca</td>
-          <td>{response !== null ? <span>{response.na_k_ca}</span> : "N/A"}</td>
-        </tr>
-      </tbody>
-    </table>
+              {loading ? (
+                <Loading />
+              ) : (
+                <>
+                  <table className="table table-striped table-bordered table-hover table-sm table-responsive">
+                    <thead>
+                      <tr>
+                        <th>Classical Geothermometers</th>
+                        <th className="align-middle">T(C)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Temperature</td>
+                        <td>
+                          {response !== null ? (
+                            <span>{response.temp}</span>
+                          ) : (
+                            "N/A"
+                          )}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Quartz⁴</td>
+                        <td>
+                          {response !== null ? (
+                            <span>{response.quartz}</span>
+                          ) : (
+                            "N/A"
+                          )}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Na/K²</td>
+                        <td>
+                          {response !== null ? (
+                            <span>{response.na_k2}</span>
+                          ) : (
+                            "N/A"
+                          )}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Na/K⁷</td>
+                        <td>
+                          {response !== null ? (
+                            <span>{response.na_k7}</span>
+                          ) : (
+                            "N/A"
+                          )}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Na-K-Ca</td>
+                        <td>
+                          {response !== null ? (
+                            <span>{response.na_k_ca}</span>
+                          ) : (
+                            "N/A"
+                          )}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
 
-    <table className="table table-striped table-bordered table-hover table-sm table-responsive">
-      <thead>
-        <tr>
-          <th className="text-center">Geothermal Gradient</th>
-          <th className="text-center">Water Type</th>
-          <th className="text-center">Water Maturity</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td className="text-center">{response !== null ? <span>{response.geoGradient}</span> : "N/A"}</td>
-          <td className="text-center">{response !== null ? <span>{response.wType}</span> : "N/A"}</td>
-          <td className="text-center">{response !== null ? <span>{response.wMaturity}</span> : "N/A"}</td>
-        </tr>
-      </tbody>
-    </table>
-  </>
-}
-
-
+                  <table className="table table-striped table-bordered table-hover table-sm table-responsive">
+                    <thead>
+                      <tr>
+                        <th className="text-center">Geothermal Gradient</th>
+                        <th className="text-center">Water Type</th>
+                        <th className="text-center">Water Maturity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="text-center">
+                          {response !== null ? (
+                            <span>{response.geoGradient}</span>
+                          ) : (
+                            "N/A"
+                          )}
+                        </td>
+                        <td className="text-center">
+                          {response !== null ? (
+                            <span>{response.wType}</span>
+                          ) : (
+                            "N/A"
+                          )}
+                        </td>
+                        <td className="text-center">
+                          {response !== null ? (
+                            <span>{response.wMaturity}</span>
+                          ) : (
+                            "N/A"
+                          )}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </>
+              )}
             </div>
           </div>
         </div>
