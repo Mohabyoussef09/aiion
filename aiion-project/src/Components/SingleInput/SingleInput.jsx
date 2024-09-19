@@ -76,7 +76,7 @@ function SingleInput() {
         <div className="row">
           <div className="col-md-3 p-3">
             <h3 className="text-white text-center">Explanation</h3>
-            <p className="text-white text-center">
+            <p className="text-white">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
               nesciunt. Porro, fuga tenetur modi voluptates id maiores
               repudiandae doloremque quibusdam.
@@ -296,77 +296,61 @@ function SingleInput() {
                   </tr>
                 </tbody>
               </table>
+              {loading ? <Loading /> : 
+  <>
+    <table
+      className="table table-striped table-bordered table-hover table-sm table-responsive"
+    >
+      <thead>
+        <tr>
+          <th>Classical Geothermometers</th>
+          <th className="align-middle">T(C)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Temperature</td>
+          <td>{response !== null ? <span>{response.temp}</span> : "N/A"}</td>
+        </tr>
+        <tr>
+          <td>Quartz⁴</td>
+          <td>{response !== null ? <span>{response.quartz}</span> : "N/A"}</td>
+        </tr>
+        <tr>
+          <td>Na/K²</td>
+          <td>{response !== null ? <span>{response.na_k2}</span> : "N/A"}</td>
+        </tr>
+        <tr>
+          <td>Na/K⁷</td>
+          <td>{response !== null ? <span>{response.na_k7}</span> : "N/A"}</td>
+        </tr>
+        <tr>
+          <td>Na-K-Ca</td>
+          <td>{response !== null ? <span>{response.na_k_ca}</span> : "N/A"}</td>
+        </tr>
+      </tbody>
+    </table>
 
-              {loading ? (
-                <Loading />
-              ) : (
-                <table
-                  className="table table-striped table-bordered table-hover table-sm table-responsive"
-                  // style={{ display: response !== null ? "block" : "none" }}
-                >
-                  <thead>
-                    <tr>
-                      <th>Classical Geothermometers</th>
-                      <th className="align-middle">T(C)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Temperature</td>
-                      <td>
-                        {response !== null ? <span>{response.temp}</span> : "N/A"}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Quartz⁴</td>
-                      <td>
-                        {response !== null ? <span>{response.quartz}</span> : "N/A"}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Na/K²</td>
-                      <td>
-                        {response !== null ? <span>{response.na_k2}</span> : "N/A"}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Na/K⁷</td>
-                      <td>
-                        {response !== null ? <span>{response.na_k7}</span> : "N/A"}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Na-K-Ca</td>
-                      <td>
-                        {response !== null ? <span>{response.na_k_ca}</span> : "N/A"}
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              )}
+    <table className="table table-striped table-bordered table-hover table-sm table-responsive">
+      <thead>
+        <tr>
+          <th className="text-center">Geothermal Gradient</th>
+          <th className="text-center">Water Type</th>
+          <th className="text-center">Water Maturity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td className="text-center">{response !== null ? <span>{response.geoGradient}</span> : "N/A"}</td>
+          <td className="text-center">{response !== null ? <span>{response.wType}</span> : "N/A"}</td>
+          <td className="text-center">{response !== null ? <span>{response.wMaturity}</span> : "N/A"}</td>
+        </tr>
+      </tbody>
+    </table>
+  </>
+}
 
-              <table className="table table-striped table-bordered table-hover table-sm table-responsive">
-                <thead>
-                  <tr>
-                    <th className="text-center">Geothermal Gradient</th>
-                    <th className="text-center">Water Type</th>
-                    <th className="text-center">Water Maturity</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="text-center">
-                      {response !== null ? <span>{response.geoGradient}</span> : "N/A"}
-                    </td>
-                    <td className="text-center">
-                      {response !== null ? <span>{response.wType}</span> : "N/A"}
-                    </td>
-                    <td className="text-center">
-                      {response !== null ? <span>{response.wMaturity}</span> : "N/A"}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+
             </div>
           </div>
         </div>
