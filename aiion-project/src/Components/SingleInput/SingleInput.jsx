@@ -14,7 +14,7 @@ function SingleInput() {
     setLoading(true);
 
     axios
-      .post("http://127.0.0.1:8000/temperature", values)
+      .post("http://127.0.0.1:8082/temperature", values)
 
       .then((res) => {
         setTimeout(() => {
@@ -39,8 +39,6 @@ function SingleInput() {
       mg2: "",
       ca2: "",
       cl: "",
-      so4_2: "",
-      hco3_: "",
       so4: "",
       hco3: "",
       sDepth: "",
@@ -53,9 +51,9 @@ function SingleInput() {
     setChargeLoading(true); 
 
     setTimeout(() => {
-      const { k, na, mg2, ca2, cl, so4_2, hco3_ } = formik.values;
+      const { k, na, mg2, ca2, cl,so4,hco3 } = formik.values;
       const ct_sum = Number(k) + Number(na) + Number(mg2) + Number(ca2);
-      const an_sum = Number(cl) + Number(so4_2) + Number(hco3_);
+      const an_sum = Number(cl) + Number(so4) + Number(hco3);
       const res = ((ct_sum - an_sum) / (ct_sum + an_sum)) * 100
       const toFixed_res = Number(res.toFixed(2))      
       setChargeBalance(toFixed_res);
@@ -182,26 +180,7 @@ function SingleInput() {
                         className="form-control"
                         type="text"
                       />
-                      <label htmlFor="so4_2">SO4-2</label>
-                      <input
-                        id="so4_2"
-                        name="so4_2"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        value={formik.values.so4_2}
-                        className="form-control"
-                        type="text"
-                      />
-                      <label htmlFor="hco3_">HCO3-</label>
-                      <input
-                        id="hco3_"
-                        name="hco3_"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        value={formik.values.hco3_}
-                        className="form-control"
-                        type="text"
-                      />
+                     
                     </td>
                     <td>
                       <label htmlFor="so4">SO4</label>
