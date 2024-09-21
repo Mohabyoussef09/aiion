@@ -16,16 +16,10 @@ function Origin() {
   }, []);
   return (
     <>
-          <div className="origin bg-body-tertiary">
-      <div className="text-container">
-        <h1 className="title text-uppercase">the origin</h1>
-        <p className="paragraph">
-          {text}
-        </p>
+      <div className="origin bg-body-tertiary">
+        <h2 className="title text-uppercase">the origin</h2>
+        <p className="paragraph">{text}</p>
       </div>
-      <div className="background-image"></div>
-    </div>
-
     </>
   );
 }

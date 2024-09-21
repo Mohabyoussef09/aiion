@@ -182,7 +182,7 @@ function FAQs() {
       .then((text) => {
         const parsedData = JSON.parse(text);
         setFaqs(parsedData);
-        console.log("Number of FAQ objects:", parsedData.length); // Logs the count of objects
+        console.log("Number of FAQ objects:", parsedData.length);
 
       })
       .catch((error) => console.error("Error fetching data:", error));

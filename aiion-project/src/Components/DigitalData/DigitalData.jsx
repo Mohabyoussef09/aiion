@@ -1,114 +1,51 @@
-import React from "react";
 
 import aust from "../../assets/images/cdn_image.gif";
 import china from "../../assets/images/china-map.gif";
-import indo from "../../assets/images/indonesia-map.gif";
-import italy from "../../assets/images/italy-map.gif";
-import japan from "../../assets/images/japan-map.gif";
-import russia from "../../assets/images/russia-map.svg";
+import us from "../../assets/images/US-Map.svg";
+import canada from "../../assets/images/Canada-map.svg";
+import iceland from "../../assets/images/Iceland-map.svg";
+import netherlands from "../../assets/images/netherlands-map.svg";
+import finland from "../../assets/images/fi.svg";
+import saudi from "../../assets/images/saudi.svg";
 
 function DigitalData() {
+
+  const countries = [
+    { src: aust, country: "Australia", link: "https://ecat.ga.gov.au/geonetwork/srv/eng/catalog.search#/metadata/65464" },
+    { src: china, country: "China", link: "http://dcc.ngac.org.cn/geologicalData/en/geologicalData/details/doi/10.23650/data.G.2018.NGA122099.K1.1.1.V1;jsessionid=B9644695E92CD56730FFFB47DBF6F3C1" },
+    { src: us, country: "Great Basin, USA", link: "https://nbmg.unr.edu/geothermal/GeochemDatabase.html" },
+    { src: canada, country: "Canada", link: "https://geoatlas.gov.nl.ca/Default.htm" },
+    { src: iceland, country: "Iceland", link: "https://zenodo.org/records/7924330" },
+    { src: netherlands, country: "Netherlands", link: "https://igiltd.com/data/netherlands/netherlands#:~:text=The%20Netherlands%20Geochemical%20Database%20comprises,also%20having%20additional%20pyrolysis%20data." },
+    { src: finland, country: "Finland", link: "https://www.arcgis.com/home/item.html?id=d143be14ebd34f48b585debd36c8aa80" },
+    { src: saudi, country: "Saudi Arabia", link: "https://ngdp.sgs.gov.sa/ngp/" },
+  ];
+  
   return (
     <>
 <div className="container mt-5 py-5">
   <div className="text-center">
     <h1 className="fa-3x">Digital Data By Country</h1>
-    <p>Get country specific about audiences around the world</p>
+    <p className="fs-5">Get country-specific insights about audiences around the world</p>
   </div>
   <div className="row py-5 gx-4">
-    <div className="col-md-2">
-      <a
-        target="_blank"
-        href="https://www.google.com/"
-        className="text-decoration-none text-dark"
-      >
-        <div className="country-card w-100 py-4">
-          <img
-            src={aust}
-            className="w-100"
-          />
-          <h6 className="text-center mt-3">Australia</h6>
-        </div>
-      </a>
-    </div>
-    <div className="col-md-2">
-      <a
-        target="_blank"
-        href="https://www.google.com/"
-        className="text-decoration-none text-dark"
-      >
-        <div className="country-card w-100 py-4">
-          <img
-            src={china}
-            className="w-100"
-          />
-          <h6 className="text-center mt-3">China</h6>
-        </div>
-      </a>
-    </div>
-    <div className="col-md-2">
-      <a
-        target="_blank"
-        href="https://www.google.com/"
-        className="text-decoration-none text-dark"
-      >
-        <div className="country-card w-100 py-4">
-          <img
-            src={indo}
-            className="w-100"
-          />
-          <h6 className="text-center mt-3">Indonesia</h6>
-        </div>
-      </a>
-    </div>
-    <div className="col-md-2">
-      <a
-        target="_blank"
-        href="https://www.google.com/"
-        className="text-decoration-none text-dark"
-      >
-        <div className="country-card w-100 py-4">
-          <img
-            src={italy}
-            className="w-100"
-          />
-          <h6 className="text-center mt-3">Italy</h6>
-        </div>
-      </a>
-    </div>
-    <div className="col-md-2">
-      <a
-        target="_blank"
-        href="https://www.google.com/"
-        className="text-decoration-none text-dark"
-      >
-        <div className="country-card w-100 py-4">
-          <img
-            src={japan}
-            className="w-100"
-
-          />
-          <h6 className="text-center mt-3">Japan</h6>
-        </div>
-      </a>
-    </div>
-    <div className="col-md-2">
-      <a
-        target="_blank"
-        href="https://www.google.com/"
-        className="text-decoration-none text-dark"
-      >
-        <div className="country-card w-100 py-4">
-          <img
-            src={russia}
-            className="w-100"
-          />
-          <h6 className="text-center mt-3">Russia</h6>
-        </div>
-      </a>
-    </div>
+    {countries.map(({ src, country, link }) => (
+      <div className="col-md-3 col-6 mb-4" key={country}>
+        <a
+          target="_blank"
+          href={link}
+          className="text-decoration-none text-dark"
+        >
+          <div className="country-card w-100 py-4">
+            <img src={src} className="w-100" alt={country} />
+            <h6 className="text-center mt-3">{country}</h6>
+          </div>
+        </a>
+      </div>
+    ))}
   </div>
 </div>
+
 
     </>
   );

@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 function ExplorModel() {
   return (
     <>
-      <div className="explore-model bg-body-tertiary py-5">
+      <div className="explore-model py-5">
         <div className="container">
           <div className="row">
             <div className="col-md-12">

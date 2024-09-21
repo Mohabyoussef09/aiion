@@ -12,6 +12,7 @@ import LearnMore from "./Components/LearnMore/LearnMore";
 import Origin from "./Components/Origin/Origin";
 import { GlobalProvider } from "./Components/Context/GlobalContext";
 import FAQs from './Components/FAQs/FAQs';
+import DeveloperBio from "./Components/DeveloperBio/DeveloperBio";
 
 
 
@@ -25,6 +26,7 @@ let x = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
       { path: "FAQs", element: <FAQs/> },
+      { path: "developerbio", element: <DeveloperBio/> },
       { path: "learnmore", element: <LearnMore /> },
       { path: "origin", element: <Origin /> },
       { path: "history", element: <History /> },

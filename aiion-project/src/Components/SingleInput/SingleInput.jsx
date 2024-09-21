@@ -71,18 +71,11 @@ function SingleInput() {
 
   return (
     <>
-      <div className="container container-form my-5 rounded py-3">
+      <div className="container my-5 rounded py-3">
         <div className="row">
-          <div className="col-md-3 p-3">
-            <h3 className="text-white text-center">Explanation</h3>
-            <p className="text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-              nesciunt. Porro, fuga tenetur modi voluptates id maiores
-              repudiandae doloremque quibusdam.
-            </p>
-          </div>
-          <div className="col-md-6 form-section p-3">
-            <h3 className="text-center mb-4">Try Model</h3>
+        
+          <div className="col-md-9 form-section">
+            <h2 className="text-center mb-4">Try Model</h2>
             <form onSubmit={formik.handleSubmit}>
               <table className="table table-striped table-bordered table-hover table-sm table-responsive">
                 <thead>
@@ -282,8 +275,8 @@ function SingleInput() {
             </form>
           </div>
 
-          <div className="col-md-3 p-3">
-            <h3 className="text-center text-white">Results</h3>
+          <div className="col-md-3 p-3 table-section">
+            <h2 className="text-center text-white">Results</h2>
             <div className="d-flex justify-content-center flex-column align-items-center">
               <table className="table table-striped table-bordered table-hover table-sm table-responsive">
                 <thead>

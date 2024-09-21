@@ -10,7 +10,7 @@ function Navbar() {
       <nav className="navbar navbar-expand-lg bg-body-tertiary p-0">
         <div className="container">
         <a className="navbar-brand" href="/">
-            <img width={100} src={logo} alt="Aiion Page Logo" />
+            <img width={130} src={logo} alt="Aiion Page Logo" />
           </a>
           <button
             className="navbar-toggler"
@@ -27,7 +27,7 @@ function Navbar() {
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
               <li className="nav-item dropdown mx-2">
                 <Link
-                  className="nav-link dropdown-toggle text-uppercase"
+                  className="nav-link dropdown-toggle text-uppercase fw-bolder"
                   to={'/origin'}
                   role="button"
                 >
@@ -35,12 +35,12 @@ function Navbar() {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to={"/about"} className="dropdown-item text-uppercase">
+                    <Link to={"/about"} className="dropdown-item text-uppercase fw-bold">
                       About
                     </Link>
                   </li>
                   <li>
-                    <Link to={"/history"} className="dropdown-item text-uppercase">
+                    <Link to={"/history"} className="dropdown-item text-uppercase fw-bold">
                       History
                     </Link>
                   </li>
@@ -49,7 +49,7 @@ function Navbar() {
 
               <li className="nav-item dropdown mx-2">
                 <a
-                  className="nav-link dropdown-toggle text-uppercase"
+                  className="nav-link dropdown-toggle text-uppercase fw-bolder"
                   href="#"
                   role="button"
                 >
@@ -57,12 +57,12 @@ function Navbar() {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to={"/single"} className="dropdown-item text-uppercase">
+                    <Link to={"/single"} className="dropdown-item text-uppercase fw-bold">
                       Single Input
                     </Link>
                   </li>
                   <li>
-                    <Link to={"/multi"} className="dropdown-item text-uppercase">
+                    <Link to={"/multi"} className="dropdown-item text-uppercase fw-bold">
                       Multi Inputs
                     </Link>
                   </li>
@@ -72,7 +72,7 @@ function Navbar() {
               <li className="nav-item dropdown mx-2">
                 <Link
                 to={'/contact'}
-                  className="nav-link dropdown-toggle text-uppercase"
+                  className="nav-link dropdown-toggle text-uppercase fw-bolder"
                   href="#"
                   role="button"
                 >
@@ -80,8 +80,13 @@ function Navbar() {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to={"FAQs"} className="dropdown-item">
+                    <Link to={"FAQs"} className="dropdown-item fw-bold">
                       FAQs
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={"developerbio"} className="dropdown-item text-uppercase fw-bold">
+                      Developer Bio
                     </Link>
                   </li>
                 </ul>

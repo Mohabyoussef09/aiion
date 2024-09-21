@@ -10,7 +10,7 @@ function FutureDirections() {
   return (
     <>
       <div className="future-directions py-5 bg-body-tertiary">
-        <div className="container">
+        <div className="container py-5">
           <h1 className="mb-5 text-center">Future Directions</h1>
 
           <div className="row">
