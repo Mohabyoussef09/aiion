@@ -51,14 +51,12 @@ function SingleInput() {
     setChargeLoading(true);
 
     setTimeout(() => {
-      const { k, na, mg2, ca2, cl,so4,hco3 } = formik.values;
+      const { k, na, mg2, ca2, cl, so4, hco3 } = formik.values;
       const ct_sum = Number(k) + Number(na) + Number(mg2) + Number(ca2);
       const an_sum = Number(cl) + Number(so4) + Number(hco3);
-      const res = ((ct_sum - an_sum) / (ct_sum + an_sum)) * 100
-      const toFixed_res = Number(res.toFixed(2))      
-      const an_sum = Number(cl) + Number(so4_2) + Number(hco3_);
       const res = ((ct_sum - an_sum) / (ct_sum + an_sum)) * 100;
       const toFixed_res = Number(res.toFixed(2));
+
       setChargeBalance(toFixed_res);
       setChargeLoading(false);
     }, 2000);
@@ -359,6 +357,24 @@ function SingleInput() {
                 <Loading />
               ) : (
                 <>
+                  <table className="table">
+                    <thead>
+                      <tr>
+                        <th className="text-center">Temperature</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="text-center">
+                          {response !== null ? (
+                            <span>{response.temp}</span>
+                          ) : (
+                            "N/A"
+                          )}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                   <table className="table table-striped table-bordered">
                     <thead>
                       <tr>
@@ -367,16 +383,6 @@ function SingleInput() {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Temperature</td>
-                        <td>
-                          {response !== null ? (
-                            <span>{response.temp}</span>
-                          ) : (
-                            "N/A"
-                          )}
-                        </td>
-                      </tr>
                       <tr>
                         <td>Quartz⁴</td>
                         <td>

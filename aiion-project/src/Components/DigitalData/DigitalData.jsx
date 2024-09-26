@@ -5,7 +5,7 @@ import us from "../../assets/images/US-Map.svg";
 import canada from "../../assets/images/Canada-map.svg";
 import iceland from "../../assets/images/Iceland-map.svg";
 import netherlands from "../../assets/images/netherlands-map.svg";
-import finland from "../../assets/images/fi.svg";
+import finland from "../../assets/images/finland-map.png";
 import saudi from "../../assets/images/saudi.svg";
 
 function DigitalData() {
@@ -23,10 +23,10 @@ function DigitalData() {
   
   return (
     <>
-<div className="container mt-5 py-5">
+<div className="container mt-5 py-4">
   <div className="text-center">
-    <h1 className="fa-3x">Digital Data By Country</h1>
-    <p className="fs-5">Get country-specific insights about audiences around the world</p>
+    <h1>Digital Data By Country</h1>
+    <p className="fs-6">Get country-specific insights about audiences around the world</p>
   </div>
   <div className="row py-5 gx-4">
     {countries.map(({ src, country, link }) => (

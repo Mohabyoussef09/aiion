@@ -26,7 +26,7 @@ function Counter() {
     <>
       <div className="counter-section text-center py-5">
         <div className="container py-5">
-          <div className="col-md-12 py-5">
+          <div className="col-md-12">
             <h2 className="mb-4 text-white">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </h2>

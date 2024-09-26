@@ -2,8 +2,6 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Components/Layout/Layout";
 import Home from "./Components/Home/Home";
-import About from "./Components/About/About";
-import History from "./Components/History/History";
 import NotFound from "./Components/NotFound/NotFound";
 import SingleInput from "./Components/SingleInput/SingleInput";
 import MultiInputs from "./Components/MultiInputs/MultiInputs";
@@ -20,13 +18,11 @@ let routes = createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <Home /> },
-      { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
       { path: "FAQs", element: <FAQs /> },
       { path: "developerbio", element: <DeveloperBio /> },
       { path: "learnmore", element: <LearnMore /> },
       { path: "origin", element: <Origin /> },
-      { path: "history", element: <History /> },
       { path: "single", element: <SingleInput /> },
       { path: "multi", element: <MultiInputs /> },
       { path: "*", element: <NotFound /> },

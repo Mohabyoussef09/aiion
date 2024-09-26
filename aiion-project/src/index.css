@@ -51,9 +51,10 @@ body{
   padding: 2rem 0;
 }
 
-.text-section h1 {
+.header-section .text-section h1 {
   color: #487A45;
   font-weight: bold;
+  font-size: 3rem;
 }
 
 .btn-gradient {
@@ -109,6 +110,7 @@ body{
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
+  height: 700px;
 }
 
 .info-icon {
@@ -122,6 +124,12 @@ body{
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .info-card {
+    height: auto;
+  }
 }
 
 
@@ -475,7 +483,7 @@ body{
 }
 
 .text-center h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: #487A45;
   font-weight: bold;
 }
@@ -486,7 +494,7 @@ body{
   }
   
   .text-center h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -495,9 +503,8 @@ body{
 /* learn more styles */
 
 .learn-more p{
-  text-align: center;
-  padding: 30px;
   text-align: left;
+  padding: 10px 0px;
 }
 
 .learn-more-shape{
@@ -516,6 +523,14 @@ body{
   transform: translateY(-50%);
   transform: translateX(-50%);
 }
+
+@media (max-width: 768px) {
+  .learn-more p{
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
 
 
 /* explor model */
@@ -546,6 +561,19 @@ text-transform: uppercase;
   background-color: #63915A;
 }
 
+/* user interaction and future directions */
+
+.user-interaction p , .future-directions p{
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .user-interaction p,  .future-directions p{
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+  }
+}
 
 /* origin styles */
 
@@ -675,28 +703,6 @@ text-transform: uppercase;
 
 /* developer bio */
 
-/* .developer-bio {
-  border-left: 5px solid #487A45;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.bio-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #63915A;
-}
-
-.bio-text {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  text-align: justify;
-  padding-left: 20px;
-  border-left: 3px solid #487A45;
-} */
-
-
 .developer-bio {
   background-color: #f9f9f9; 
   border-left: 5px solid #487A45; 
@@ -742,4 +748,24 @@ text-transform: uppercase;
     line-height: 1.5;
     text-align: start;
   }
+}
+
+/* not found */
+
+.not-found{
+  min-height: 80vh;
+}
+
+.not-found h1{
+  font-size: 5rem;
+  color: red;
+}
+
+.not-found .btn{
+  background-color: #487A45;
+  color: white;
+}
+
+.not-found .btn:hover{
+  background-color: #63915A;
 }

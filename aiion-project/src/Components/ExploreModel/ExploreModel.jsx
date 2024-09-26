@@ -10,8 +10,8 @@ function ExploreModel() {
                   <h1 className="card-title mb-4 text-center">
                     Explore the Model
                   </h1>
-                  <p className="card-text lead text-center text-muted">
-                    AiIoN Runs In Single And Multiple Modes:
+                  <p className="card-text lead text-center">
+                    AiION Runs In Single And Multiple Modes:
                   </p>
                   <hr className="my-4" />
                   <ul className="list-unstyled">
@@ -44,8 +44,8 @@ function ExploreModel() {
                       geothermometers calculations, graphical output of
                       predicted data over diagrams.
                     </p>
-                    <div className="text-center mt-4">
-                      <a href="/" className="btn btn-explore rounded-pill">
+                    <div className="mt-4">
+                      <a href="/" className="btn btn-explore px-3 py-2">
                         Explore Now
                       </a>
                     </div>
