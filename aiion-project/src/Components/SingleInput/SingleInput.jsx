@@ -14,7 +14,7 @@ function SingleInput() {
     setLoading(true);
 
     axios
-      .post("http://127.0.0.1:8082/temperature", values)
+      .post("http://127.0.0.1:8000/temperature", values)
 
       .then((res) => {
         setTimeout(() => {
@@ -198,23 +198,23 @@ function SingleInput() {
                             className="form-control"
                             type="text"
                           />
-                          <label htmlFor="so4_2">SO4-2</label>
+                          <label htmlFor="so4">SO4-2</label>
                           <input
-                            id="so4_2"
-                            name="so4_2"
+                            id="so4"
+                            name="so4"
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            value={formik.values.so4_2}
+                            value={formik.values.so4}
                             className="form-control"
                             type="text"
                           />
-                          <label htmlFor="hco3_">HCO3-</label>
+                          <label htmlFor="hco3">HCO3-</label>
                           <input
-                            id="hco3_"
-                            name="hco3_"
+                            id="hco3"
+                            name="hco3"
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            value={formik.values.hco3_}
+                            value={formik.values.hco3}
                             className="form-control"
                             type="text"
                           />
@@ -234,26 +234,6 @@ function SingleInput() {
                     <tbody>
                       <tr>
                         <td>
-                          <label htmlFor="so4">SO4</label>
-                          <input
-                            id="so4"
-                            name="so4"
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            value={formik.values.so4}
-                            className="form-control"
-                            type="text"
-                          />
-                          <label htmlFor="hco3">HCO3</label>
-                          <input
-                            id="hco3"
-                            name="hco3"
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            value={formik.values.hco3}
-                            className="form-control"
-                            type="text"
-                          />
                           <label htmlFor="sDepth">Sample Depth Input</label>
                           <input
                             id="sDepth"
