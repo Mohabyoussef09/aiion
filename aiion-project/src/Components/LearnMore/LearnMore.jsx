@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import ExploreModel from "../ExplorModel/ExploreModel";
+import ExploreModel from "../ExploreModel/ExploreModel";
 import UserInteraction from "../UserInteraction/UserInteraction";
 import Info from "../Info/Info";
 import FutureDirections from "../FutureDirections/FutureDirections";
 import { GlobalContext } from "../Context/GlobalContext";
+
 
 function LearnMore() {
   const { paragraphs } = useContext(GlobalContext);
@@ -26,15 +27,12 @@ function LearnMore() {
       </div>
 
       <ExploreModel />
- 
+
       <UserInteraction />
 
+      <Info />
 
-
-
-      <Info/>
-
-      <FutureDirections /> 
+      <FutureDirections />
     </>
   );
 }

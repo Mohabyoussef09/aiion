@@ -37,7 +37,7 @@ function DigitalData() {
           className="text-decoration-none text-dark"
         >
           <div className="country-card w-100 py-4">
-            <img src={src} className="w-100" alt={country} />
+            <img src={src} className="w-100" alt={`${country} Digital Data`} />
             <h6 className="text-center mt-3">{country}</h6>
           </div>
         </a>

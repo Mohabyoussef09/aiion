@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { GlobalContext } from "../Context/GlobalContext";
 import userImg from "../../assets/images/BINARY ICONS.png";
+import { GlobalContext } from "../Context/GlobalContext";
 
 function UserInteraction() {
   const { paragraphs } = useContext(GlobalContext);
@@ -15,7 +15,7 @@ function UserInteraction() {
             <img src={userImg} className="user-img img-fluid" />
           </div>
           <div className="col-md-6">
-            <p className="user-text fs-5 text-start">{paragraphs[1]}</p>
+            <p className="user-text fs-5 p-3 text-start">{paragraphs[1]}</p>
           </div>
         </div>
       </div>

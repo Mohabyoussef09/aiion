@@ -11,13 +11,10 @@ import Contact from "./Components/Contact/Contact";
 import LearnMore from "./Components/LearnMore/LearnMore";
 import Origin from "./Components/Origin/Origin";
 import { GlobalProvider } from "./Components/Context/GlobalContext";
-import FAQs from './Components/FAQs/FAQs';
+import FAQs from "./Components/FAQs/FAQs";
 import DeveloperBio from "./Components/DeveloperBio/DeveloperBio";
 
-
-
-
-let x = createBrowserRouter([
+let routes = createBrowserRouter([
   {
     path: "",
     element: <Layout />,
@@ -25,8 +22,8 @@ let x = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
-      { path: "FAQs", element: <FAQs/> },
-      { path: "developerbio", element: <DeveloperBio/> },
+      { path: "FAQs", element: <FAQs /> },
+      { path: "developerbio", element: <DeveloperBio /> },
       { path: "learnmore", element: <LearnMore /> },
       { path: "origin", element: <Origin /> },
       { path: "history", element: <History /> },
@@ -38,9 +35,11 @@ let x = createBrowserRouter([
 ]);
 
 function App() {
-  return <GlobalProvider>
-    <RouterProvider router={x}></RouterProvider>
-  </GlobalProvider>
+  return (
+    <GlobalProvider>
+      <RouterProvider router={routes}></RouterProvider>
+    </GlobalProvider>
+  );
 }
 
 export default App;

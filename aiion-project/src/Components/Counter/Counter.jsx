@@ -17,9 +17,9 @@ function Counter() {
 
     fetchFileData();
 
-    const intervalId = setInterval(fetchFileData, 1000);
+    const interValid = setInterval(fetchFileData, 1000);
 
-    return () => clearInterval(intervalId);
+    return () => clearInterval(interValid);
   }, []);
 
   return (

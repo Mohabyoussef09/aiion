@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from "react";
 
 export const GlobalContext = createContext();
 
-export const GlobalProvider = ({ children }) => {
+export function GlobalProvider({children}){
   const [paragraphs, setParagraphs] = useState([]);
 
   useEffect(() => {
@@ -18,10 +18,14 @@ export const GlobalProvider = ({ children }) => {
     };
 
     fetchFileData();
+
+    const interValid = setInterval(fetchFileData, 1000);
+
+    return () => clearInterval(interValid);
   }, []);
 
   return (
-    <GlobalContext.Provider value={{ paragraphs }}>
+    <GlobalContext.Provider value={{paragraphs: paragraphs}}>
       {children}
     </GlobalContext.Provider>
   );

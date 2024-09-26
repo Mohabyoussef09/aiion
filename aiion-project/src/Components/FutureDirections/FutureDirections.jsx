@@ -18,7 +18,7 @@ function FutureDirections() {
                 <img src={hand} className="w-50 rounded-circle" />
             </div>
             <div className="col-md-6 d-flex align-items-center">
-              <p className="fs-5 text-start">{paragraphs[4]}</p>
+              <p className="fs-5 p-3 text-left">{paragraphs[4]}</p>
             </div>
           </div>
         </div>

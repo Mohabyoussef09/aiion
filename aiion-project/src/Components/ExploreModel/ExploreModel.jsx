@@ -1,6 +1,4 @@
-import React, { useContext } from "react";
-
-function ExplorModel() {
+function ExploreModel() {
   return (
     <>
       <div className="explore-model py-5">
@@ -15,17 +13,17 @@ function ExplorModel() {
                   <p className="card-text lead text-center text-muted">
                     AiIoN Runs In Single And Multiple Modes:
                   </p>
-                  <hr className="my-4"/>
+                  <hr className="my-4" />
                   <ul className="list-unstyled">
                     <li className="mb-3">
-                      <i className="fa-solid fa-check-circle me-2"></i>
+                      <i className="fa-solid fa-angles-right me-2"></i>
                       <span>
                         For single input: input your geochemical data in “The
                         Model” tab.
                       </span>
                     </li>
                     <li className="mb-3">
-                      <i className="fa-solid fa-check-circle me-2"></i>
+                      <i className="fa-solid fa-angles-right me-2"></i>
                       <span>
                         For multiple inputs: you will require a CSV file with
                         data organized similar to the
@@ -47,10 +45,7 @@ function ExplorModel() {
                       predicted data over diagrams.
                     </p>
                     <div className="text-center mt-4">
-                      <a
-                        href="/"
-                        className="btn btn-explore rounded-pill"
-                      >
+                      <a href="/" className="btn btn-explore rounded-pill">
                         Explore Now
                       </a>
                     </div>
@@ -65,4 +60,4 @@ function ExplorModel() {
   );
 }
 
-export default ExplorModel;
+export default ExploreModel;

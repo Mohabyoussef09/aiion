@@ -10,12 +10,12 @@ function Footer() {
           <div className="footer-logo mb-3 mb-md-0">
             <img
               src={footerImg}
-              alt="Company Logo"
+              alt="AiION Logo"
               className="logo img-fluid"
             />
           </div>
           <div className="footer-text text-center text-md-start">
-            <p>&copy; 2024 Company Name. All rights reserved.</p>
+            <p>&copy; 2024 <span className="fw-bolder">AiION</span>. All rights reserved.</p>
             <p>
               <a href="#">
                 Privacy Policy

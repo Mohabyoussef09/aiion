@@ -8,7 +8,7 @@ function Origin() {
     fetch("/origin.txt")
       .then((response) => response.text())
       .then((data) => {
-        setText(data); // Update the state with the fetched text
+        setText(data);
       })
       .catch((error) => {
         console.error("Error fetching the text file:", error);

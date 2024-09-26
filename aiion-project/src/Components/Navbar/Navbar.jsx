@@ -10,7 +10,7 @@ function Navbar() {
       <nav className="navbar navbar-expand-lg bg-body-tertiary p-0">
         <div className="container">
         <a className="navbar-brand" href="/">
-            <img width={130} src={logo} alt="Aiion Page Logo" />
+            <img width={130} src={logo} alt="AiION Logo" />
           </a>
           <button
             className="navbar-toggler"
