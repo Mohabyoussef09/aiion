@@ -44,11 +44,13 @@ function MultiInputs() {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container">
       <div className="row">
-        <div className="col-md-12 d-flex flex-column align-items-center upload-box p-5">
-          <i className="fas fa-file-upload fa-5x mb-3 upload-icon"></i>
-          <p className="upload-text">Drag and drop a file to upload</p>
+        <div className="col-12 col-md-12 d-flex flex-column align-items-center upload-box p-4 p-md-5">
+          <i className="fas fa-file-upload fa-4x fa-md-5x mb-3 upload-icon"></i>
+          <p className="upload-text text-center">
+            Drag and drop a file to upload
+          </p>
 
           <input
             type="file"
@@ -57,20 +59,23 @@ function MultiInputs() {
             style={{ display: "none" }}
           />
 
-          <div className="d-flex">
-            <label htmlFor="fileInput" className="btn btn-upload">
+          <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
+            <label htmlFor="fileInput" className="btn btn-upload w-100 mt-3 btn-no-wrap">
               {file ? file.name : "Choose File"}
             </label>
 
             <button
               onClick={handleUpload}
-              className="btn btn-predict ms-3"
+              className="btn btn-predict ms-md-3 w-100 mt-3"
               disabled={!file}
             >
               Predict
             </button>
 
-            <button className="btn btn-download ms-3" onClick={handleDownload}>
+            <button
+              className="btn btn-download ms-md-3 w-100 mt-3"
+              onClick={handleDownload}
+            >
               <i className="fa-solid fa-download me-2"></i>
               Download Template
             </button>
