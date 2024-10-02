@@ -22,25 +22,24 @@ function MultiInputs() {
       return;
     }
 
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      const myData = reader.result.split(",")[1];
-      console.log(myData);
+    const formData = new FormData();
+    formData.append("file", file);
 
-      localStorage.setItem(
-        "uploadedFile",
-        JSON.stringify({
-          fileName: file.name,
-          fileType: file.type,
-          fileData: myData,
-        })
-      );
-
-      setUploadStatus("File uploaded to local storage successfully!");
-      setFile(null);
-    };
-
-    reader.readAsDataURL(file);
+    // Replace this URL with your Flask server URL
+    fetch("https://aiion.ai/testapp/upload", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data); // The response from the Flask server
+        setUploadStatus("File uploaded to server successfully!");
+        setFile(null);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setUploadStatus("Failed to upload file.");
+      });
   };
 
   return (
@@ -60,7 +59,10 @@ function MultiInputs() {
           />
 
           <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
-            <label htmlFor="fileInput" className="btn btn-upload w-100 mt-3 btn-no-wrap">
+            <label
+              htmlFor="fileInput"
+              className="btn btn-upload w-100 mt-3 btn-no-wrap"
+            >
               {file ? file.name : "Choose File"}
             </label>
 

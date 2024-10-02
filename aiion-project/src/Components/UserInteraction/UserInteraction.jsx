@@ -18,7 +18,7 @@ function UserInteraction() {
             </div>
           </div>
           <div className="col-md-6">
-            <p className="user-text fs-5">{paragraphs[1]}</p>
+            <p className="user-text fs-4">{paragraphs[1]}</p>
           </div>
         </div>
       </div>

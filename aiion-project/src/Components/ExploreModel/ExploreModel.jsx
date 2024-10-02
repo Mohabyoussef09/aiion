@@ -10,11 +10,11 @@ function ExploreModel() {
                   <h1 className="card-title mb-4 text-center">
                     Explore the Model
                   </h1>
-                  <p className="card-text lead text-center">
+                  <p className="card-text text-center fs-5">
                     AiION Runs In Single And Multiple Modes:
                   </p>
                   <hr className="my-4" />
-                  <ul className="list-unstyled">
+                  <ul className="list-unstyled fs-5">
                     <li className="mb-3">
                       <i className="fa-solid fa-angles-right me-2"></i>
                       <span>
@@ -38,14 +38,14 @@ function ExploreModel() {
                     </li>
                   </ul>
                   <div className="mt-4">
-                    <p className="text-muted">OUTPUT:</p>
-                    <p>
+                    <p className="text-muted fs-5">OUTPUT:</p>
+                    <p className="fs-5">
                       Predicted subsurface temperature, common classical
                       geothermometers calculations, graphical output of
                       predicted data over diagrams.
                     </p>
                     <div className="mt-4">
-                      <a href="/" className="btn btn-explore px-3 py-2">
+                      <a href="/" className="btn btn-explore">
                         Explore Now
                       </a>
                     </div>

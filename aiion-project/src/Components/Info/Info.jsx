@@ -13,8 +13,8 @@ function Info() {
               <div className="info-card">
                 <div className="card-body">
                   <i className="fa-solid fa-globe info-icon mb-3"></i>
-                  <h3 className="mb-3">How The Model Works?</h3>
-                  <p className="fs-5 text-start">{paragraphs[2]}</p>
+                  <h2 className="mb-2">How The Model Works?</h2>
+                  <p>{paragraphs[2]}</p>
                 </div>
               </div>
             </div>
@@ -22,8 +22,8 @@ function Info() {
               <div className="info-card">
                 <div className="card-body">
                   <i className="fa-solid fa-bullseye info-icon mb-3"></i>
-                  <h3 className="mb-3">Training & Evaluation</h3>
-                  <p className="fs-5 text-start">{paragraphs[3]}</p>
+                  <h2 className="mb-2">Training & Evaluation</h2>
+                  <p>{paragraphs[3]}</p>
                 </div>
               </div>
             </div>

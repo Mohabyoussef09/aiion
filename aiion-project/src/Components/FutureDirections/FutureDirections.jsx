@@ -10,7 +10,7 @@ function FutureDirections() {
   return (
     <>
       <div className="future-directions py-5 bg-body-tertiary">
-        <div className="container py-3">
+        <div className="container">
           <h1 className="mb-5 text-center">Future Directions</h1>
 
           <div className="row">
@@ -20,7 +20,7 @@ function FutureDirections() {
               </div>
             </div>
             <div className="col-md-6 d-flex align-items-center">
-              <p className="fs-5">{paragraphs[4]}</p>
+              <p className="fs-4">{paragraphs[4]}</p>
             </div>
           </div>
         </div>

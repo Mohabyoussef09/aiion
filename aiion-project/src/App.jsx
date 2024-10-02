@@ -11,6 +11,7 @@ import Origin from "./Components/Origin/Origin";
 import { GlobalProvider } from "./Components/Context/GlobalContext";
 import FAQs from "./Components/FAQs/FAQs";
 import DeveloperBio from "./Components/DeveloperBio/DeveloperBio";
+import Publications from './Components/Publications/Publications';
 
 let routes = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ let routes = createBrowserRouter([
       { path: "developerbio", element: <DeveloperBio /> },
       { path: "learnmore", element: <LearnMore /> },
       { path: "origin", element: <Origin /> },
+      { path: "publications", element: <Publications /> },
       { path: "single", element: <SingleInput /> },
       { path: "multi", element: <MultiInputs /> },
       { path: "*", element: <NotFound /> },

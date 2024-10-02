@@ -24,19 +24,37 @@ function Navbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
-              <li className="nav-item mx-2">
-                <Link
-                  className="nav-link text-uppercase fw-bolder"
-                  to={"/origin"}
+              <li className="nav-item dropdown mx-2 fs-5">
+                <a
+                  className="nav-link dropdown-toggle text-uppercase fw-bolder"
+                  href="#"
                   role="button"
                 >
-                  the origin
-                </Link>
+                  our story
+                </a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link
+                      to={"/origin"}
+                      className="dropdown-item text-uppercase fw-bold fs-5"
+                    >
+                      the origin
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={"/publications"}
+                      className="dropdown-item text-uppercase fw-bold fs-5"
+                    >
+                      publications
+                    </Link>
+                  </li>
+                </ul>
               </li>
 
               <li className="nav-item dropdown mx-2">
                 <a
-                  className="nav-link dropdown-toggle text-uppercase fw-bolder"
+                  className="nav-link dropdown-toggle text-uppercase fw-bolder fs-5"
                   href="#"
                   role="button"
                 >
@@ -46,7 +64,7 @@ function Navbar() {
                   <li>
                     <Link
                       to={"/single"}
-                      className="dropdown-item text-uppercase fw-bold"
+                      className="dropdown-item text-uppercase fw-bold fs-5"
                     >
                       Single Input
                     </Link>
@@ -54,7 +72,7 @@ function Navbar() {
                   <li>
                     <Link
                       to={"/multi"}
-                      className="dropdown-item text-uppercase fw-bold"
+                      className="dropdown-item text-uppercase fw-bold fs-5"
                     >
                       Multi Inputs
                     </Link>
@@ -65,7 +83,7 @@ function Navbar() {
               <li className="nav-item dropdown mx-2">
                 <Link
                   to={"/contact"}
-                  className="nav-link dropdown-toggle text-uppercase fw-bolder"
+                  className="nav-link dropdown-toggle text-uppercase fw-bolder fs-5"
                   href="#"
                   role="button"
                 >
@@ -73,14 +91,14 @@ function Navbar() {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to={"FAQs"} className="dropdown-item fw-bold">
+                    <Link to={"FAQs"} className="dropdown-item fw-bold fs-5">
                       FAQs
                     </Link>
                   </li>
                   <li>
                     <Link
                       to={"developerbio"}
-                      className="dropdown-item text-uppercase fw-bold"
+                      className="dropdown-item text-uppercase fw-bold fs-5"
                     >
                       Developer Bio
                     </Link>
